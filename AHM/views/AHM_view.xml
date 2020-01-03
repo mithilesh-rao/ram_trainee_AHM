@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!-- Registration -->
+	<record id="registration_tree_view" model="ir.ui.view">
+		<field name="name">ahm.registration.tree</field>
+			<field name="model">ahm.registration</field>
+			<field name="arch" type="xml">
+				<tree string="Registration Form">
+					<field name="name"/>
+					<field name="image"/>
+					<field name="contact"/>
+					<field name="email"/>
+					<field name="address"/>
+					<field name="specialization"/>
+					<field name="degree_certificate"/>
+				</tree>
+			</field>
+	</record>
+
+	<record id="registration_action" model="ir.actions.act_window">
+			<field name="name">Registration</field>
+			<field name="res_model">ahm.registration</field>
+			<field name="view_mode">tree,form</field>
+	</record>
+
+<!-- Registration -->
+
+<!-- Appointment -->
+
+	<record id="appointment_tree_view" model="ir.ui.view">
+		<field name="name">ahm.appointment.tree</field>
+			<field name="model">ahm.appointment</field>
+			<field name="arch" type="xml">
+				<tree string="Appointment Form">
+					<field name="name"/>
+					<field name="contact"/>
+					<field name="visiting_time"/>
+					<field name="visit_charges"/>
+					<field name="address"/>
+				</tree>
+			</field>
+	</record>
+		<record id="appointment_action" model="ir.actions.act_window">
+			<field name="name">Appointment</field>
+			<field name="res_model">ahm.appointment</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+<!-- Appointment -->
+
+<!-- Animal_Registration -->
+
+<record id="animal_registration_tree_view" model="ir.ui.view">
+		<field name="name">ahm.animal_registration.tree</field>
+			<field name="model">ahm.animal_registration</field>
+			<field name="arch" type="xml">
+				<tree string="Animal Registration Form">
+					<field name="breed_name"/>
+					<field name="breed_type"/>
+					<field name="image"/>
+					<field name="onwer_contact"/>
+					<field name="email"/>
+					<field name="address"/>
+				</tree>
+			</field>
+	</record>
+	<record id="animal_registration_action" model="ir.actions.act_window">
+		<field name="name">Animal Registration</field>
+		<field name="res_model">ahm.animal_registration</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+<!-- Animal_Registration -->
+
+<!-- Organization Registration -->
+
+<record id="organization_registration_tree_view" model="ir.ui.view">
+		<field name="name">ahm.organization_registration.tree</field>
+			<field name="model">ahm.organization_registration</field>
+			<field name="arch" type="xml">
+				<tree string="Animal Registration Form">
+					<field name="org_name"/>
+					<field name="org_registration_no"/>
+					<field name="contact"/>
+					<field name="email"/>
+					<field name="facility"/>
+					<field name="address"/>
+					<field name="visiting_time"/>
+					<field name="helpline_number"/>
+				</tree>
+			</field>
+	</record>
+	<record id="organization_registration_action" model="ir.actions.act_window">
+		<field name="name">Organization Registration</field>
+		<field name="res_model">ahm.organization_registration</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+
+<!-- Organization Registration -->
+		
+
+		<menuitem id="registration_menu" name="AHM" sequence="1"/>
+
+		<menuitem id="registration_sub_menu_1" name="Doctor Registration" parent="registration_menu" action="registration_action" sequence="1"/>
+
+		<menuitem id="appointment_sub_menu_1" name="Appointment" parent="registration_menu" action="appointment_action" sequence="1"/>
+
+		<menuitem id="animal_registration_sub_menu_1" name="Animal Registration" parent="registration_menu" action="animal_registration_action" sequence="1"/>
+		
+		<menuitem id="organization_registration_sub_menu_1" name="Organization Registration" parent="registration_menu" action="organization_registration_action" sequence="1"/>
+</odoo>
