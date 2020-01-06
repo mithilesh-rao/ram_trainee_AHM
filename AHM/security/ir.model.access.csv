@@ -1,5 +1,7 @@
-id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
-access_ahm_registration,access_ahm_registration,model_ahm_registration,base.group_user,1,1,1,1
-access_ahm_appointment,access_ahm_appointment,model_ahm_appointment,base.group_user,1,1,1,1
-access_ahm_animal_registration,access_ahm_animal_registration,model_ahm_animal_registration,base.group_user,1,1,1,1
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ahm_animal_registration,access_ahm_animal_registration,model_ahm_animal_registration,base.group_user,1,1,1,1 
 access_ahm_organization_registration,access_ahm_organization_registration,model_ahm_organization_registration,base.group_user,1,1,1,1
+access_ahm_registration,access_ahm_registration,model_ahm_registration,base.group_user,1,1,1,1 
+access_ahm_appointment,access_ahm_appointment,model_ahm_appointment,base.group_user,1,1,1,1
+access_ahm_health,access_ahm_health,model_ahm_health,base.group_user,1,1,1,1
+access_ahm_total_charges,access_ahm_total_charges,model_ahm_total_charges,base.group_user,1,1,1,1 
