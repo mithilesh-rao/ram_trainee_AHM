@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
+<!-- Search View -->
+
+<record id="health_search_view" model="ir.ui.view">
+    <field name="name">ahm.health.search</field>
+    <field name="model">ahm.health</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="duration"/>
+            <field name="starting_date" string="Starting Date" filter_domain="[('starting_date', 'like',self)]"/>
+
+            <!-- <group string="Group BY">
+                <filter name="group_by_duration" string="Duration" context="{'group_by' : 'duration'}" />
+            </group> -->
+        </search>
+    </field>
+</record>
+
+
+<!-- Search View -->
+
+
+
 <record id="health_calendar_view" model="ir.ui.view">
     <field name="name">ahm.health.calendar</field>
     <field name="model">ahm.health</field>
