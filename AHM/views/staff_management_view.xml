@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+<!-- Registration -->
+
+<record id="registration_form_view" model="ir.ui.view">
+    <field name="name">ahm.registration.form</field>
+    <field name="model">ahm.registration</field>
+    <field name="arch" type="xml">
+        <form string="Registration Form">            
+            <header>
+                <button name="draft" string="Draft" type="object" decoration-warning="status=='draft'" />
+                <button name="confirm" string="Confirm" type="object" decoration-info="status=='confirm'" />
+                <button name="done" string="Done" type="object" decoration-success="status=='done'"/>
+                <field name="status" widget="statusbar"/>
+            </header>
+            <sheet>
+                <group>
+                    <field name="name" context="{'group_by': 'name'}"/>
+                    <field name="image"/>
+                    <field name="contact"/>
+                    <field name="email"/>
+                    <field name="address"/>
+                    <field name="specialization"/>
+                    <field name="degree_certificate"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="registration_tree_view" model="ir.ui.view">
+    <field name="name">ahm.registration.tree</field>
+    <field name="model">ahm.registration</field>
+    <field name="arch" type="xml">
+                <tree string="Registration Form">
+                    <field name="name"/>
+                    <field name="image"/>
+                    <field name="contact"/>
+                    <field name="email"/>
+                    <field name="address"/>
+                    <field name="specialization"/>
+                    <field name="degree_certificate"/>
+                </tree>
+            </field>
+</record>
+
+<record id="registration_action" model="ir.actions.act_window">
+    <field name="name">Doctor Registration</field>
+    <field name="res_model">ahm.registration</field>
+    <field name="view_mode">tree,form</field>
+</record>
+<!-- Registration -->
+    
+<!-- Organization Registration -->
+
+<record id="organization_registration_tree_view" model="ir.ui.view">
+    <field name="name">ahm.organization_registration.tree</field>
+    <field name="model">ahm.organization.registration</field>
+    <field name="arch" type="xml">
+        <tree string="Animal Registration Form">
+            <field name="org_name"/>
+            <field name="org_registration_no"/>
+            <field name="contact"/>
+            <field name="email"/>
+            <field name="facility"/>
+            <field name="address"/>
+            <field name="visiting_time"/>
+            <field name="helpline_number"/>
+        </tree>
+    </field>
+</record>
+<record id="organization_registration_action" model="ir.actions.act_window">
+    <field name="name">Organization Registration</field>
+    <field name="res_model">ahm.organization.registration</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<!-- Organization Registration -->      
+
+    <menuitem id="registration_sub_menu_1" name="Doctor Registration" parent="registration_menu" action="registration_action" sequence="1"/>
+
+    <menuitem id="organization_registration_sub_menu_1" name="Organization Registration" parent="registration_menu" action="organization_registration_action"/>
+
+</odoo>

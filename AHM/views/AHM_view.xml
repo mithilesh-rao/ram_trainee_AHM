@@ -1,205 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-<!-- Registration -->
-    
-<record id="registration_form_view" model="ir.ui.view">
-        <field name="name">ahm.registration.form</field>
-            <field name="model">ahm.registration</field>
-            <field name="arch" type="xml">
-                <form string="Registration Form">
-                    
-                <header>
-                    <button name="draft" string="Draft" type="object"/>
-                    <button name="confirm" string="Confirm" type="object"/>
-                    <button name="done" string="Done" type="object"/>
-                    <field name="status" widget="statusbar"/>
-                </header>
-                <sheet>
-                    <group>
-                         <field name="name"/>
-                        <field name="image"/>
-                        <field name="contact"/>
-                        <field name="email"/>
-                        <field name="address"/>
-                        <field name="specialization"/>
-                        <field name="degree_certificate"/>
-                    </group>
-                </sheet>
-                </form>
-            </field>
-    </record>
-
-
-    <record id="registration_tree_view" model="ir.ui.view">
-        <field name="name">ahm.registration.tree</field>
-            <field name="model">ahm.registration</field>
-            <field name="arch" type="xml">
-                <tree string="Registration Form">
-                    <field name="name"/>
-                    <field name="image"/>
-                    <field name="contact"/>
-                    <field name="email"/>
-                    <field name="address"/>
-                    <field name="specialization"/>
-                    <field name="degree_certificate"/>
-                </tree>
-            </field>
-    </record>
-
-    <record id="registration_action" model="ir.actions.act_window">
-            <field name="name">Doctor Registration</field>
-            <field name="res_model">ahm.registration</field>
-            <field name="view_mode">tree,form</field>
-    </record>
-
-<!-- Registration -->
-
-
-
-
-
-<!-- Appointment -->
-
-    <record id="appointment_tree_view" model="ir.ui.view">
-        <field name="name">ahm.appointment.tree</field>
-            <field name="model">ahm.appointment</field>
-            <field name="arch" type="xml">
-                <tree string="Appointment Form">
-                    <field name="name"/>
-                    <field name="contact"/>
-                    <field name="visiting_time"/>
-                    <field name="visit_charges"/>
-                    <field name="address"/>
-                </tree>
-            </field>
-    </record>
-        <record id="appointment_action" model="ir.actions.act_window">
-            <field name="name">Appointment</field>
-            <field name="res_model">ahm.appointment</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-<!-- Appointment -->
-
-<!-- Animal_Registration -->
-
-<record id="animal_registration_tree_view" model="ir.ui.view">
-        <field name="name">ahm.animal_registration.tree</field>
-            <field name="model">ahm.animal.registration</field>
-            <field name="arch" type="xml">
-                <tree string="Animal Registration Form">
-                    <field name="breed_name"/>
-                    <field name="breed_type"/>
-                    <field name="image"/>
-                    <field name="onwer_contact"/>
-                    <field name="email"/>
-                    <field name="address"/>
-                </tree>
-            </field>
-    </record>
-    <record id="animal_registration_action" model="ir.actions.act_window">
-        <field name="name">Animal Registration</field>
-        <field name="res_model">ahm.animal.registration</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-<!-- Animal_Registration -->
-
-<!-- Organization Registration -->
-
-<record id="organization_registration_tree_view" model="ir.ui.view">
-        <field name="name">ahm.organization_registration.tree</field>
-            <field name="model">ahm.organization.registration</field>
-            <field name="arch" type="xml">
-                <tree string="Animal Registration Form">
-                    <field name="org_name"/>
-                    <field name="org_registration_no"/>
-                    <field name="contact"/>
-                    <field name="email"/>
-                    <field name="facility"/>
-                    <field name="address"/>
-                    <field name="visiting_time"/>
-                    <field name="helpline_number"/>
-                </tree>
-            </field>
-    </record>
-    <record id="organization_registration_action" model="ir.actions.act_window">
-        <field name="name">Organization Registration</field>
-        <field name="res_model">ahm.organization.registration</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-<!-- Organization Registration -->      
-
-
-<!-- total Charges -->
-
-<record id="total_charges_tree_view" model="ir.ui.view">
-        <field name="name">ahm.total.charges.tree</field>
-            <field name="model">ahm.total.charges</field>
-            <field name="arch" type="xml">
-                <tree string="Total Charges Form">
-                    <field name="app_id"/>
-                    <field name="medicine_charges"/>
-                    <field name="other_charges"/>
-                    <field name="total_bill"/>
-                </tree>
-            </field>
-    </record>
-    <record id="total_charges_action" model="ir.actions.act_window">
-        <field name="name">Total Charges</field>
-        <field name="res_model">ahm.total.charges</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-
-<!-- total charges -->
-<!-- Health -->
 
 <record id="health_calendar_view" model="ir.ui.view">
-        <field name="name">ahm.health.calendar</field>
-            <field name="model">ahm.health</field>
-            <field name="arch" type="xml">
-                <!-- <calendar string="Session Calendar"> -->
-                <calendar string="Session Calendar" date_start="starting_date" date_stop="ending_date">
-                    <field name="duration"/>
-                </calendar>
-            </field>
-    </record>
+    <field name="name">ahm.health.calendar</field>
+    <field name="model">ahm.health</field>
+    <field name="arch" type="xml">
+        <calendar string="Session Calendar" date_start="starting_date" date_stop="ending_date">
+            <field name="duration"/>
+        </calendar>
+    </field>
+</record>
 
 <record id="health_graph_view" model="ir.ui.view">
-        <field name="name">ahm.health.calendar</field>
-            <field name="model">ahm.health</field>
-            <field name="arch" type="xml">
-                <graph string="Graph">
-                    <!-- <field name="inventor_id"/> -->
-                    <field name="duration" type="measure"/>
-                </graph>
-            </field>
-    </record>
+    <field name="name">ahm.health.calendar</field>
+    <field name="model">ahm.health</field>
+    <field name="arch" type="xml">
+        <graph string="Graph">
+            <!-- <field name="starting_date"/>
+            <field name="ending_date"/> -->
+            <field name="graph_field" type="row"/>
+        </graph>
+    </field>
+</record>
+
+<record id="health_action" model="ir.actions.act_window">
+    <field name="name">Health</field>
+    <field name="res_model">ahm.health</field>
+    <field name="view_mode">tree,form,calendar,graph</field>
+</record>
+
+    <menuitem id="registration_menu" name="AHM" sequence="1"/>
+
+    <menuitem id="calendar_sub_menu_1" name="Health" parent="registration_menu" action="health_action" sequence="1"/>
 
 
-    <record id="health_action" model="ir.actions.act_window">
-        <field name="name">Health</field>
-        <field name="res_model">ahm.health</field>
-        <field name="view_mode">tree,form,calendar,graph</field>
-    </record>
-
-
-<!--  Health -->
-
-
-        <menuitem id="registration_menu" name="AHM" sequence="1"/>
-
-        <menuitem id="registration_sub_menu_1" name="Doctor Registration" parent="registration_menu" action="registration_action" sequence="1"/>
-
-        <menuitem id="appointment_sub_menu_1" name="Appointment" parent="registration_menu" action="appointment_action" sequence="1"/>
-
-        <menuitem id="animal_registration_sub_menu_1" name="Animal Registration" parent="registration_menu" action="animal_registration_action" sequence="1"/>
-        
-        <menuitem id="organization_registration_sub_menu_1" name="Organization Registration" parent="registration_menu" action="organization_registration_action" sequence="1"/>
-
-        <menuitem id="total_charges_sub_menu_1" name="Total Charges" parent="registration_menu" action="total_charges_action" sequence="1"/>
-
-        <menuitem id="calendar_sub_menu_1" name="Health" parent="registration_menu" action="health_action" sequence="1"/>
-        
 </odoo>

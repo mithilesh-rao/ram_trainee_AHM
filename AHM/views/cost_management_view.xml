@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+<!-- total Charges -->
+
+<record id="total_charges_tree_view" model="ir.ui.view">
+    <field name="name">ahm.total.charges.tree</field>
+    <field name="model">ahm.total.charges</field>
+    <field name="arch" type="xml">
+        <tree string="Total Charges Form">
+            <field name="app_id"/>
+            <field name="medicine_charges"/>
+            <field name="other_charges"/>
+            <field name="total_bill"/>
+        </tree>
+    </field>
+</record>
+
+<record id="total_charges_action" model="ir.actions.act_window">
+    <field name="name">Total Charges</field>
+    <field name="res_model">ahm.total.charges</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<!-- total charges -->
+</odoo>

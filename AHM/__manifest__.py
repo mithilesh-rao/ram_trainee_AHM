@@ -11,6 +11,9 @@
     'data': [
         'security/ir.model.access.csv',
         'views/AHM_view.xml',
+        'views/patient_detail_view.xml',
+        'views/staff_management_view.xml',
+        'views/cost_management_view.xml'
     ],
     
     'demo': [
