@@ -10,10 +10,15 @@
     
     'data': [
         'security/ir.model.access.csv',
+
+        'wizard/wizard_view.xml',
+        'reports/reports.xml',
+
         'views/AHM_view.xml',
         'views/patient_detail_view.xml',
         'views/staff_management_view.xml',
-        'views/cost_management_view.xml'
+        'views/cost_management_view.xml',
+        'views/inventory_view.xml',
     ],
     
     'demo': [

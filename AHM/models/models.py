@@ -23,3 +23,4 @@ class Health(models.Model):
             else:
                 i.duration = 2
 
+

@@ -11,7 +11,7 @@ class PatientDetail(models.Model):
     name = fields.Many2one(comodel_name="ahm.appointment",ondelete="cascade")
     medicine = fields.Text(String="Medicine",required=True)
     prescription = fields.Char(string="Prescription")
-
+    image = fields.Many2one(comodel_name="ahm.appointment",ondelete="cascade")
 
 class Appointment(models.Model):
     _name  = 'ahm.appointment'

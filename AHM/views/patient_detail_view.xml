@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
+<record id="patient_detail_search_view" model="ir.ui.view">
+    <field name="name">ahm.patient.detail.search</field>
+    <field name="model">ahm.patient.detail</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name" string="Name" filter_domain="[('name', 'like',self)]"/>
+           
+            <!-- <field name="starting_date" string="Starting Date" filter_domain="[('starting_date', 'like',self)]"/> -->
+
+            <group string="Group BY">
+                <filter name="group_by_medicine" string="Medicine" context="{'group_by' : 'medicine'}" />
+            </group>
+        </search>
+    </field>
+</record>
+
 
 <record id="view_patient_detail_kanban" model="ir.ui.view">
     <field name="name">ahm_patient_detail.kanban</field>
@@ -11,14 +27,21 @@
                 <field name="name"/>
                 <field name="medicine"/>
                 <field name="prescription"/>
+                <field name="image"/>
                 <templates>
                      <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_global_click">
                             <strong>
+                                Appointment Name:
                                 <field name="app_id"/>
+                                <br/>Name:
                                 <field name="name"/>
+                                 <br/>Medicine:
                                 <field name="medicine"/>
+                                <br/>Prescription:
                                 <field name="prescription"/>
+                                <br/>Image:
+                                <field name="image"/>
                             </strong>
                         </div>
                      </t>
@@ -81,11 +104,13 @@
 </record>
 
 <!-- Animal_Registration -->
+    
+    <menuitem id="Appointment_Menu" name="Appointment" parent="AHM.registration_menu"/>
 
-    <menuitem id="patient_detail_sub_menu_1" name="Patient Detail" parent="registration_menu" action="patient_detail_action"/>
+    <menuitem id="patient_detail_sub_menu_1" name="Patient Detail" parent="Appointment_Menu" action="patient_detail_action"/>
 
-    <menuitem id="appointment_sub_menu_1" name="Appointment" parent="registration_menu" action="appointment_action" sequence="1"/>
+    <menuitem id="appointment_sub_menu_1" name="Appointment" parent="Appointment_Menu" action="appointment_action" sequence="1"/>
 
-    <menuitem id="animal_registration_sub_menu_1" name="Animal Registration" parent="registration_menu" action="animal_registration_action" sequence="1"/>    
+    <menuitem id="animal_registration_sub_menu_1" name="Animal Registration" parent="Appointment_Menu" action="animal_registration_action" sequence="1"/>    
 
 </odoo>

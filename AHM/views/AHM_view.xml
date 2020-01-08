@@ -22,7 +22,6 @@
 <!-- Search View -->
 
 
-
 <record id="health_calendar_view" model="ir.ui.view">
     <field name="name">ahm.health.calendar</field>
     <field name="model">ahm.health</field>
@@ -53,7 +52,7 @@
 
     <menuitem id="registration_menu" name="AHM" sequence="1"/>
 
-    <menuitem id="calendar_sub_menu_1" name="Health" parent="registration_menu" action="health_action" sequence="1"/>
+    <menuitem id="calendar_sub_menu_1" name="Health" parent="AHM.Appointment_Menu" action="health_action" sequence="1"/>
 
 
 </odoo>

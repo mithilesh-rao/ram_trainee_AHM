@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+ <record model="ir.ui.view" id="stock_wizard_form_view">
+            <field name="name">ahm_stock.form</field>
+            <field name="model">ahm.stock</field>
+            <field name="arch" type="xml">
+                <form string="Stock">
+                    <group>
+                        <field name="name"/>
+                        <field name="comp"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="stock_wizard"
+                    name="Stock"
+                    binding_model="ahm.stock"
+                    res_model="ahm.stock"
+                    view_mode="form"
+                    target="new"/>
+</odoo>

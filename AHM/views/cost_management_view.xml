@@ -23,7 +23,7 @@
     <field name="view_mode">tree,form</field>
 </record>
 
-    <menuitem id="total_charges_sub_menu_1" name="Total Charges" parent="registration_menu" action="total_charges_action" sequence="1"/>
+    <menuitem id="total_charges_sub_menu_1" name="Total Charges" parent="AHM.Appointment_Menu" action="total_charges_action"/>
 
 
 <!-- total charges -->

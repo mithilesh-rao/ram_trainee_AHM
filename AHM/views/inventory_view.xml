@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+<record id="view_medicine_kanban" model="ir.ui.view">
+    <field name="name">ahm.medicine.kanban</field>
+    <field name="model">ahm.medicine</field>
+    <field name="arch" type="xml">
+        <kanban>
+                <field name="med_id"/>
+                <field name="med_name"/>
+                <field name="med_type"/>
+                <field name="med_company"/>
+                <field name="price"/>
+                <field name="manu_date"/>
+                <field name="exp_date"/>
+                <templates>
+                     <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div t-attf-class="oe_kanban_content">
+                                <strong>
+                                    Medicine No:
+                                    <field name="med_id"/>
+                                    <br/>Medicine Name:
+                                    <field name="med_name"/>
+                                    <br/>Medicine Type:
+                                    <field name="med_type"/>
+                                    <br/>Medicine Company:
+                                    <field name="med_company"/>
+                                    <br/>Price:
+                                    <field name="price"/>
+                                    <br/>Manufactering Date:
+                                    <field name="manu_date"/>
+                                    <br/>Expiry Date:
+                                    <field name="exp_date"/>
+                                </strong>
+                        </div>
+                        </div>
+                     </t>
+                </templates>
+            </kanban>
+    </field>
+</record>
+
+<record id="medicine_action" model="ir.actions.act_window">
+    <field name="name">Medicine</field>
+    <field name="res_model">ahm.medicine</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+
+
+<record id="view_stock_kanban" model="ir.ui.view">
+    <field name="name">ahm.stock.kanban</field>
+    <field name="model">ahm.stock</field>
+    <field name="arch" type="xml">
+        <kanban>
+                <field name="stock_id"/>
+                <field name="name"/>
+                <field name="comp"/>
+                <templates>
+                     <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div t-attf-class="oe_kanban_content">
+                                <strong>
+                                    Stock No:
+                                    <field name="stock_id"/>
+                                    <br/>Stock Name:
+                                    <field name="name"/>
+                                    <br/>Medicine Company:
+                                    <field name="comp"/>
+                                </strong>
+                        </div>
+                        </div>
+                     </t>
+                </templates>
+            </kanban>
+    </field>
+</record>
+
+<record id="stock_action" model="ir.actions.act_window">
+    <field name="name">Stock</field>
+    <field name="res_model">ahm.stock</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+
+<record id="view_bill_kanban" model="ir.ui.view">
+    <field name="name">ahm.bill.kanban</field>
+    <field name="model">ahm.bill</field>
+    <field name="arch" type="xml">
+        <kanban>
+                <field name="bill_id"/>
+                <field name="name"/>
+                <field name="comp"/>
+                <field name="price"/>
+                <field name="quantity"/>
+                <templates>
+                     <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div t-attf-class="oe_kanban_content">
+                                <strong>
+                                    Bill No.:
+                                    <field name="bill_id"/>
+                                    <br/>Name:
+                                    <field name="name"/>
+                                    <br/>Company:
+                                    <field name="comp"/>
+                                    <br/>Price:
+                                    <field name="price"/>
+                                    <br/>Quantity:
+                                    <field name="quantity"/>
+                                </strong>
+                        </div>
+                        </div>
+                     </t>
+                </templates>
+            </kanban>
+    </field>
+</record>
+
+<record id="bill_action" model="ir.actions.act_window">
+    <field name="name">Bill</field>
+    <field name="res_model">ahm.bill</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+
+
+<menuitem id="Inventory_Menu" parent="AHM.registration_menu" name="Inventory" />
+
+<menuitem id="medicine_sub_menu_1" name="Medicine" parent="Inventory_Menu" action="medicine_action" sequence="2" />
+
+<menuitem id="stock_sub_menu_1" name="Stock" parent="Inventory_Menu" action="stock_action" sequence="2" />
+
+<menuitem id="bill_sub_menu_1" name="Stock Bill" parent="Inventory_Menu" action="bill_action" sequence="2" />
+
+
+</odoo>
