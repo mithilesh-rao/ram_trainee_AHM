@@ -19,29 +19,30 @@ class Stock(models.Model):
     _name = 'ahm.stock'
     _decription = "AHM Stock"
 
-    stock_id = fields.Integer(string="Stock No")
-    name = fields.Char(string="Stock Name",required=True)
-    comp = fields.Char(string="Company",required=True)
+    stock_id = fields.Many2one('ahm.bill', string="Stock No",ondelete="cascade")
+    # name = fields.One2many(comodel_name="ahm.medicine",string="Stock Name")
+    name = fields.Char(string="Stock Name")
+    comp = fields.Char(string="Company")
+
 
 class Bill(models.Model):
     _name='ahm.bill'
     _decription = "AHM Bill"
 
-    bill_id = fields.Many2one(comodel_name="ahm.stock",ondelete="cascade",string="Bill No.")
+    # bill_id = fields.One2many(comodel_name="ahm.stock",string="Bill No.",inverse_name="stock_id")
     name = fields.Char(string="Name",required=True)
     comp = fields.Char(string="Company",required=True)
     price = fields.Float(string="Price",required=True)
     quantity = fields.Integer(string="Quantity",required=True)
 
-
     @api.model
     def create(self,vals):
-        print("---------Hello----------")
+        print("---------Successfully Create----------")
         return super(Bill, self).create(vals)
 
     def write(self,vals):
         # print("---------Hello World!----------",self.env['ahm.bill'].search([('name','=',"First Stock")]))
-        print("---------Hello World!----------",self.env['ahm.bill'].browse([1,2])._context)
+        print("---------Successfully Write!----------",self.env['ahm.bill'].browse([1,2])._context)
 
         return super(Bill, self).write(vals)        
 
@@ -50,6 +51,6 @@ class Bill(models.Model):
         return super(Bill, self).copy()
 
     def unlink(self,default=None):
-        print("---------Hello Meet!----------")
+        print("---------Unlinked!----------")
         return super(Bill, self).unlink()        
         

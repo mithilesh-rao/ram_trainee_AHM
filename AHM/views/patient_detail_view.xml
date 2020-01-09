@@ -105,12 +105,11 @@
 
 <!-- Animal_Registration -->
     
-    <menuitem id="Appointment_Menu" name="Appointment" parent="AHM.registration_menu"/>
+    
+    <menuitem id="patient_detail_sub_menu_1" name="Patient Detail" parent="AHM.Appointment_Menu" action="patient_detail_action"/>
 
-    <menuitem id="patient_detail_sub_menu_1" name="Patient Detail" parent="Appointment_Menu" action="patient_detail_action"/>
+    <menuitem id="appointment_sub_menu_1" name="Appointment" parent="AHM.Appointment_Menu" action="appointment_action" sequence="1"/>
 
-    <menuitem id="appointment_sub_menu_1" name="Appointment" parent="Appointment_Menu" action="appointment_action" sequence="1"/>
-
-    <menuitem id="animal_registration_sub_menu_1" name="Animal Registration" parent="Appointment_Menu" action="animal_registration_action" sequence="1"/>    
+    <menuitem id="animal_registration_sub_menu_1" name="Animal Registration" parent="AHM.Appointment_Menu" action="animal_registration_action" sequence="1"/>    
 
 </odoo>

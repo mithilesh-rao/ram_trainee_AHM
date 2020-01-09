@@ -78,8 +78,10 @@
 
 <!-- Organization Registration -->      
 
-    <menuitem id="registration_sub_menu_1" name="Doctor Registration" parent="registration_menu" action="registration_action" sequence="1"/>
+    <menuitem id="staff_management" name="Staff Management" parent="AHM.registration_menu"/>
 
-    <menuitem id="organization_registration_sub_menu_1" name="Organization Registration" parent="registration_menu" action="organization_registration_action"/>
+    <menuitem id="registration_sub_menu_1" name="Doctor Registration" parent="staff_management" action="registration_action" sequence="1"/>
+
+    <menuitem id="organization_registration_sub_menu_1" name="Organization Registration" parent="staff_management" action="organization_registration_action"/>
 
 </odoo>

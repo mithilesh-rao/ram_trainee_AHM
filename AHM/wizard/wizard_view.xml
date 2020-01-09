@@ -1,23 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<odoo>
-
- <record model="ir.ui.view" id="stock_wizard_form_view">
-            <field name="name">ahm_stock.form</field>
-            <field name="model">ahm.stock</field>
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="ahm_stocks_wizard" model="ir.ui.view">
+            <field name="name">ahm.stocks.transient.wizard</field>
+            <field name="model">ahm.stocks.transient</field>
             <field name="arch" type="xml">
-                <form string="Stock">
+                <form string="Hi i am wizard">
                     <group>
-                        <field name="name"/>
-                        <field name="comp"/>
+                        <field name="stock_id"/>
                     </group>
+                    <footer>
+                        <button name="get_default_stock" 
+                            string="Finished" type="object" 
+                            class="btn-primary"/>
+                        <button string="Cancel" 
+                            class="btn-default" 
+                            special="cancel" />
+                    </footer>
                 </form>
             </field>
         </record>
 
-        <act_window id="stock_wizard"
-                    name="Stock"
-                    binding_model="ahm.stock"
-                    res_model="ahm.stock"
-                    view_mode="form"
-                    target="new"/>
-</odoo>
+        <record id="action_view_wizard" model="ir.actions.act_window">
+            <field name="name">Hi i am a wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">ahm.stocks.transient</field>
+            <field name="view_id" ref="ahm_stocks_wizard"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="wizard_memu" name="wizard Menu" parent="AHM.Inventory_Menu" sequence="20" action="action_view_wizard"/>
+    </data>
+</openerp>
