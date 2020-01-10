@@ -1,5 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-	
-	
+    
+<template id="index">
+    <t t-call="website.layout">
+        <form method="post">
+            <table class="table-sm">
+                <div>
+                    <tr>
+                        <td>Stock No.</td>
+                        <td><input type="number" name="txt_stock" id="txt_stock"/></td>
+                    </tr>
+
+                    <tr>
+                        <td>Name</td>
+                        <td><input type="text" name="txt_name" id="txt_name"/></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Company</td>
+                        <td><input type="text" name="txt_comp" id="txt_comp"/></td>
+                    </tr>
+                    
+                    <tr>
+                        <td></td>
+                        <td><button type="submit">Submit</button></td>
+                    </tr>
+                    <tr>
+                    <!-- <th> Stock No</th> -->
+                    <th> Name</th>
+                    <th> Company</th>
+                    </tr>
+                </div>
+                <div>
+                <tr t-foreach="stock" t-as="doc">
+
+                    <td class="pb_text_left line_left">
+                        <span t-esc="doc.name"/>
+                    </td>
+                    <td class="pb_text_left line_left">
+                         <span t-esc="doc.comp"/>
+                    </td>
+                    <td>
+                        <a t-attf-href="/update/#{slug(doc)}" >
+                        <i class="fa fa-edit"/>
+                        </a>
+                    </td>
+                    <td>
+                        <a t-attf-href="/delete/#{slug(doc)}/">
+                        <i class="fa fa-trash"/>
+                        </a>
+                    </td>                    
+                </tr>
+                <td>
+                    
+                </td>
+                </div>
+
+            </table>
+    </form>
+    </t>
+</template>
+
 </odoo>
