@@ -22,5 +22,4 @@ class Health(models.Model):
                 i.duration = delta.days
             else:
                 i.duration = 2
-
-
+                

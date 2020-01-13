@@ -11,8 +11,6 @@
     <field name="target">new</field>
 </record>
 
-
-
 <record id="view_medicine_kanban" model="ir.ui.view">
     <field name="name">ahm.medicine.kanban</field>
     <field name="model">ahm.medicine</field>
@@ -103,7 +101,6 @@
     <field name="model">ahm.bill</field>
     <field name="arch" type="xml">
         <kanban>
-                <!-- <field name="bill_id"/> -->
                 <field name="name"/>
                 <field name="comp"/>
                 <field name="price"/>
@@ -124,9 +121,9 @@
                                     <br/>Quantity:
                                     <field name="quantity"/>
                                 </strong>
+                            </div>
                         </div>
-                        </div>
-                     </t>
+                    </t>
                 </templates>
             </kanban>
     </field>
@@ -139,7 +136,6 @@
 </record>
 
 
-
 <menuitem id="Inventory_Menu" parent="AHM.registration_menu" name="Inventory" />
 
 <menuitem id="medicine_sub_menu_1" name="Medicine" parent="Inventory_Menu" action="medicine_action" sequence="2" />
@@ -147,6 +143,5 @@
 <menuitem id="stock_sub_menu_1" name="Stock" parent="Inventory_Menu" action="stock_action" sequence="2" />
 
 <menuitem id="bill_sub_menu_1" name="Stock Bill" parent="Inventory_Menu" action="bill_action" sequence="2" />
-
 
 </odoo>

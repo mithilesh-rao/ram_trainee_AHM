@@ -3,27 +3,28 @@ from odoo import http
 
 class Medicine(http.Controller):
 
-    @http.route('/Medicine/Medicine', auth="public", type='http', website=True, csrf=False, method=['GET'])
+    @http.route('/Medicine/Medicine', auth="public", website=True)
     def index(self, **kw):
         stock = http.request.env['ahm.stock']
-        return http.request.render('AHM.index',{'stock': stock.search([])})
+        return http.request.render('AHM.index',{'stock': stock.sudo().search([])})
     
+
     @http.route(['/delete/<model("ahm.stock"):doc>',], auth='public', website=True)
     def delete(self,doc):
         doc.unlink()
         return http.request.redirect('/Medicine/Medicine')
 
-    @http.route(['/update/<model("ahm.stock"):doc>',], auth='public', website=True)
-    def update(self,doc):
-        stock.http.request.env['ahm.stock']
-        return http.render.render('AHM.index.create_update_form',{"stock_id" : doc})
 
-        # if http.request.httprequest.method == "POST":
-        #   http.request.env["ahm.stock"].create({
-        #       'stock_id':http.request.params.get('stock_id'),
-        #       'name': http.request.params.get('txt_name'),
-        #       'comp': http.request.params.get('txt_comp'),
+    @http.route(['/update/<model("ahm.stock"):d>','/create/'], auth='public', website=True)
+    def update(self,d=None):
+        return http.request.render('AHM.index1',{"d" : d})
 
-        #   })
-        # return http.request.render("AHM.index")
-
+     
+    @http.route(['/save/',], auth='public', website=True)
+    def save(self,**kw):
+        stock = http.request.env['ahm.stock']
+        if kw['id']:
+            stock.search([]).browse([kw['id']]).write(kw)
+        else:
+            stock.create(kw)
+        return http.request.redirect('/Medicine/Medicine')
