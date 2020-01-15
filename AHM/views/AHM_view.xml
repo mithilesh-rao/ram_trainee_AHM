@@ -52,6 +52,5 @@
     <menuitem id="Appointment_Menu" name="Appointment" parent="registration_menu"/>
 
     <menuitem id="calendar_sub_menu_1" name="Health" parent="AHM.Appointment_Menu" action="health_action" sequence="1"/>
-
-
+    
 </odoo>

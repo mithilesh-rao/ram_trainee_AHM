@@ -19,6 +19,7 @@
         'views/cost_management_view.xml',
         'views/inventory_view.xml',
         'views/templates.xml',
+        'views/template.xml',
         
         'wizard/wizard_view.xml',
     ],

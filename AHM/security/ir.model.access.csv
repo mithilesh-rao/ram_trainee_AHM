@@ -10,3 +10,4 @@ access_ahm_medicine,access_ahm_medicine,model_ahm_medicine,base.group_user,1,1,1
 access_ahm_stock,access_ahm_stock,model_ahm_stock,base.group_user,1,1,1,1
 access_ahm_stock_public,access_ahm_stock_public,model_ahm_stock,,1,1,1,1
 access_ahm_bill,access_ahm_bill,model_ahm_bill,base.group_user,1,1,1,1
+access_ahm_bill_public,access_ahm_bill_public,model_ahm_bill,,1,1,1,1

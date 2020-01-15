@@ -19,7 +19,6 @@ class Stock(models.Model):
     _name = 'ahm.stock'
     _decription = "AHM Stock"
 
-    
     # name = fields.One2many(comodel_name="ahm.medicine",string="Stock Name")
     name = fields.Char(string="Stock Name")
     stock_id = fields.Many2one('ahm.bill', string="Stock No",ondelete="cascade")
