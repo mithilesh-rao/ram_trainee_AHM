@@ -64,7 +64,7 @@
     <field name="model">ahm.stock</field>
     <field name="arch" type="xml">
         <kanban>
-                <field name="stock_id"/>
+                <!-- <field name="stock_id"/> -->
                 <field name="name"/>
                 <field name="comp"/>
                 <templates>
@@ -72,8 +72,8 @@
                         <div t-attf-class="oe_kanban_global_click">
                             <div t-attf-class="oe_kanban_content">
                                 <strong>
-                                    Stock No:
-                                    <field name="stock_id"/>
+                                    <!-- Stock No: -->
+                                    <!-- <field name="stock_id"/> -->
                                     <br/>Stock Name:
                                     <field name="name"/>
                                     <br/>Medicine Company:

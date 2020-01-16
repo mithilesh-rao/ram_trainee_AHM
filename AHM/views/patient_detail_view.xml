@@ -7,9 +7,7 @@
     <field name="arch" type="xml">
         <search>
             <field name="name" string="Name" filter_domain="[('name', 'like',self)]"/>
-           
             <!-- <field name="starting_date" string="Starting Date" filter_domain="[('starting_date', 'like',self)]"/> -->
-
             <group string="Group BY">
                 <filter name="group_by_medicine" string="Medicine" context="{'group_by' : 'medicine'}" />
             </group>
@@ -17,30 +15,68 @@
     </field>
 </record>
 
+<record id="patient_detail_tree_view" model="ir.ui.view">
+    <field name="name">ahm.patient.detail.tree</field>
+    <field name="model">ahm.patient.detail</field>
+    <field name="type">form</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="app_id"/>
+            <field name="name"/>
+            <field name="medicine"/>
+            <field name="prescription"/>
+        </tree>
+    </field>
+</record>
+
+<record id="patient_detail_form_view" model="ir.ui.view">
+    <field name="name">ahm.patient.detail.form</field>
+    <field name="model">ahm.patient.detail</field>
+    <field name="type">form</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group string="Patient Detail">
+                    <!-- <field name="app_id"/> -->
+                    <field name="name"/>
+                    <field name="medicine"/>
+                    <field name="prescription"/>
+                    <field name="image" widget="image" class="oe_avatar oe_left" width="65" height="65"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
 <record id="view_patient_detail_kanban" model="ir.ui.view">
-    <field name="name">ahm_patient_detail.kanban</field>
+    <field name="name">ahm.patient.detail.kanban</field>
     <field name="model">ahm.patient.detail</field>
     <field name="arch" type="xml">
          <kanban>
-                <field name="app_id"/>
+                <field name="image"/>
+                <!-- <field name="app_id"/> -->
                 <field name="name"/>
                 <field name="medicine"/>
                 <field name="prescription"/>
-                <field name="image"/>
                 <templates>
                      <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_global_click">
+                            <group>
+                                <div>
+                            <field name="image" widget="image" class="oe_avatar oe_left" width="85" height="85"/>
+                            </div>
+                            </group>
                             <strong>
-                                Appointment Name:
-                                <field name="app_id"/>
+                                <group>
+                                <!-- Appointment Name:
+                                <field name="app_id"/> -->
                                 <br/>Name:
                                 <field name="name"/>
                                  <br/>Medicine:
                                 <field name="medicine"/>
                                 <br/>Prescription:
                                 <field name="prescription"/>
-                                <br/>Image:
-                                <field name="image"/>
+                                </group>
                             </strong>
                         </div>
                      </t>
@@ -91,12 +127,69 @@
     </field>
 </record>
 
+
+<record id="animal_registration_form_view" model="ir.ui.view">
+    <field name="name">ahm.animal_registration.form</field>
+    <field name="model">ahm.animal.registration</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="breed_name"/>
+                    <field name="breed_type"/>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <field name="onwer_contact"/>
+                    <field name="email"/>
+                    <field name="address"/>
+                </group>        
+            </sheet>
+        </form>
+    </field>
+</record>
+
+
+
+<record id="view_animal_registration_kanban" model="ir.ui.view">
+    <field name="name">ahm.animal_registration.form</field>
+    <field name="model">ahm.animal.registration</field>
+    <field name="arch" type="xml">
+        <kanban>
+            <field name="breed_name"/>
+                <field name="breed_type"/>
+                <field name="image" widget="image" class="oe_avatar"/>
+                <field name="onwer_contact"/>
+                <field name="email"/>
+                <field name="address"/>
+                <templates>
+                     <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <strong>
+                                Breed Name:
+                                <field name="breed_name"/>
+                                <br/>Breed Type:
+                                <field name="breed_type"/>
+                                 <br/>Image:
+                                <field name="image"/>
+                                <br/>Owner Contact:
+                                <field name="onwer_contact"/>
+                                <br/> Email:
+                                <field name="email"/>
+                                <br/>Image:
+                            <field name="image" widget="image" width="55" height="55"/>
+                            </strong>
+                        </div>
+                     </t>
+                </templates>
+        </kanban>
+    </field>
+</record>
+
+
 <record id="animal_registration_action" model="ir.actions.act_window">
     <field name="name">Animal Registration</field>
     <field name="res_model">ahm.animal.registration</field>
-    <field name="view_mode">tree,form</field>
+    <field name="view_mode">tree,form,kanban</field>
 </record>
-    
     
     <menuitem id="patient_detail_sub_menu_1" name="Patient Detail" parent="AHM.Appointment_Menu" action="patient_detail_action"/>
 

@@ -21,9 +21,8 @@
     <field name="view_mode">tree,form</field>
 </record>
 
-<menuitem id="Appointment_Menu" name="Appointment" parent="registration_menu"/>
+<menuitem id="Appointment_Menu" name="Registration" parent="registration_menu"/>
 
     <menuitem id="total_charges_sub_menu_1" name="Total Charges" parent="AHM.Appointment_Menu" action="total_charges_action"/>
-
 
 </odoo>

@@ -1,6 +1,6 @@
 from datetime import datetime
 from odoo.tools import DEFAULT_SERVER_DATE_FORMAT
-from odoo import models, fields, api, exceptions
+from odoo import models, fields, api
 
 
 class PatientDetail(models.Model):
@@ -8,10 +8,10 @@ class PatientDetail(models.Model):
     _description = "AHM Patient Detail"
 
     app_id = fields.Many2one(comodel_name="ahm.appointment",ondelete="cascade")
-    name = fields.Many2one(comodel_name="ahm.appointment",ondelete="cascade")
-    medicine = fields.Text(String="Medicine",required=True)
+    name = fields.Char(string="Name", required=True)
+    medicine = fields.Text(String="Medicine")
     prescription = fields.Char(string="Prescription")
-    image = fields.Many2one(comodel_name="ahm.appointment",ondelete="cascade")
+    image = fields.Binary(string="Image",attachment=True)
 
 class Appointment(models.Model):
     _name  = 'ahm.appointment'

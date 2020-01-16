@@ -2,6 +2,21 @@
 <odoo>
 
 
+<record id="registration_tree_view" model="ir.ui.view">
+    <field name="name">ahm.registration.tree</field>
+    <field name="model">ahm.registration</field>
+    <field name="arch" type="xml">
+        <tree string="Registration Form">
+            <field name="name"/>
+            <field name="contact"/>
+            <field name="email"/>
+            <field name="address"/>
+            <field name="specialization"/>
+        </tree>
+    </field>
+</record>
+
+
 <record id="registration_form_view" model="ir.ui.view">
     <field name="name">ahm.registration.form</field>
     <field name="model">ahm.registration</field>
@@ -15,39 +30,74 @@
             </header>
             <sheet>
                 <group>
-                    <field name="name" context="{'group_by': 'name'}"/>
-                    <field name="image"/>
-                    <field name="contact"/>
-                    <field name="email"/>
-                    <field name="address"/>
-                    <field name="specialization"/>
-                    <field name="degree_certificate"/>
+                    <group>
+                        <field name="image" widget="image" class="oe_avatar oe_left"/>
+                    </group>
+                    <group string="Name">
+                        <field name="name"/>   
+                    </group>    
+                    <group string="Personal Details">
+                        <field name="contact"/>
+                        <field name="email"/>
+                        <field name="address"/>
+                    </group>
+                    <group string="Additional">
+                        <field name="visiting_time"/>
+                        <field name="specialization"/>
+                        <field name="degree_certificate" widget="image" class="oe_avatar oe_left"/>
+                    </group>
                 </group>
             </sheet>
         </form>
     </field>
 </record>
 
-<record id="registration_tree_view" model="ir.ui.view">
-    <field name="name">ahm.registration.tree</field>
+
+<record id="view_registration_kanban" model="ir.ui.view">
+    <field name="name">ahm.registration.kanban</field>
     <field name="model">ahm.registration</field>
     <field name="arch" type="xml">
-        <tree string="Registration Form">
-            <field name="name"/>
-            <field name="image"/>
-            <field name="contact"/>
-            <field name="email"/>
-            <field name="address"/>
-            <field name="specialization"/>
-            <field name="degree_certificate"/>
-        </tree>
+        <kanban>
+            <!-- <field name="name" context="{'group_by': 'name'}"/> -->
+                <field name="name"/>
+                <field name="image" widget="oe_avatar"/>
+                <field name="contact"/>
+                <field name="email"/>
+                <field name="address"/>
+                <field name="visiting_time"/>
+                <field name="specialization"/>
+                <field name="degree_certificate"/>
+                <field name="status"/>
+                <field name="id"/>
+                <templates>
+                     <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <strong>
+                                Dr.
+                                <field name="name"/>
+                                <div class="oe_kanban_avatar float-right">
+                                <img t-att-src="kanban_image('ahm.registration','image',record.id.raw_value)" alt="Image" width="75" height="75"/>
+                                </div>
+                                <br/>Contact:
+                                <field name="contact"/>
+                                <br/>Email:
+                                <field name="email"/>
+                                 <br/>Specialization:
+                                <field name="specialization"/>
+                            </strong>
+                        </div>
+                     </t>
+                </templates>
+            </kanban>
     </field>
 </record>
+
+
 
 <record id="registration_action" model="ir.actions.act_window">
     <field name="name">Doctor Registration</field>
     <field name="res_model">ahm.registration</field>
-    <field name="view_mode">tree,form</field>
+    <field name="view_mode">tree,form,kanban</field>
 </record>
 
 <record id="organization_registration_tree_view" model="ir.ui.view">

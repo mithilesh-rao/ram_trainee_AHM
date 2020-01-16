@@ -21,7 +21,7 @@ class Stock(models.Model):
 
     # name = fields.One2many(comodel_name="ahm.medicine",string="Stock Name")
     name = fields.Char(string="Stock Name")
-    stock_id = fields.Many2one('ahm.bill', string="Stock No",ondelete="cascade")
+    # stock_id = fields.Many2one('ahm.bill', string="Stock No",ondelete="cascade")
     comp = fields.Char(string="Company")
 
 

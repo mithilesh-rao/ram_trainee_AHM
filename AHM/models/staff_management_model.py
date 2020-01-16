@@ -2,21 +2,22 @@ from datetime import datetime
 from odoo.tools import DEFAULT_SERVER_DATE_FORMAT
 from odoo import models, fields, api, exceptions
 
-
 class Registration(models.Model):
     _name = 'ahm.registration'
     _description = 'AHM Registration'
 
-    name = fields.Char(string="Name", required=True)
-    image = fields.Binary(string="Image Upload")
+    name = fields.Char(required=True)
+    image = fields.Binary(required=True)
     contact = fields.Char(string="Contact")
     email = fields.Char(string="Email", required=True)
     address = fields.Char(string="Address", required=True)
     visiting_time = fields.Datetime(string='Visiting Time')
     specialization = fields.Char(string="Specialization", required=True)
-    degree_certificate  = fields.Binary(string="Degree Certificate")
-    status = fields.Selection(selection=[('draft', 'Draft'), ('confirm', 'Confirm'), ('done', 'Done')],
-        default='draft')
+    degree_certificate  = fields.Binary()
+    status = fields.Selection([
+        ('draft', 'Draft'),
+        ('confirm', 'Confirm'),
+        ('done', 'Done')], default='draft')
 
     def draft(self):
         self.write({"status": "draft"})
