@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-
 <record id="total_charges_tree_view" model="ir.ui.view">
     <field name="name">ahm.total.charges.tree</field>
     <field name="model">ahm.total.charges</field>
@@ -9,7 +8,7 @@
         <tree string="Total Charges Form">
             <field name="app_id"/>
             <field name="medicine_charges"/>
-            <field name="other_charges"/>
+            <field name="visiting_charges"/>
             <field name="total_bill"/>
         </tree>
     </field>
@@ -23,6 +22,6 @@
 
 <menuitem id="Appointment_Menu" name="Registration" parent="registration_menu"/>
 
-    <menuitem id="total_charges_sub_menu_1" name="Total Charges" parent="AHM.Appointment_Menu" action="total_charges_action"/>
+    <menuitem id="total_charges_sub_menu_1" name="Patient Total Bill" parent="AHM.Appointment_Menu" action="total_charges_action"/>
 
 </odoo>

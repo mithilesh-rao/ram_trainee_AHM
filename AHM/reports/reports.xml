@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <odoo>
-
+    
     <report
         id="report_stock"
         model="ahm.stock"
@@ -15,8 +15,14 @@
             <t t-foreach="docs" t-as="doc">
                 <t t-call="web.external_layout">
                     <div class="page">
-                         <p> <h1>Name</h1> <span t-field="docs.name"/></p>
-                         <p> <h1>Company</h1> <span t-field="docs.comp"/></p>
+                        <p> 
+                            <h1>Name</h1> 
+                            <span t-field="docs.name"/>
+                        </p>
+                        <p> 
+                            <h1>Company</h1> 
+                            <span t-field="docs.comp"/>
+                        </p>
                     </div>
                 </t>
             </t>

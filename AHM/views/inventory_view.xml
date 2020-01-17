@@ -27,26 +27,19 @@
                         <div t-attf-class="oe_kanban_global_click">
                             <div t-attf-class="oe_kanban_content">
                                 <strong>
-                                    Medicine No:
-                                    <field name="med_id"/>
-                                    <br/>Medicine Name:
+                                    Medicine Name :
                                     <field name="med_name"/>
-                                    <br/>Medicine Type:
+                                    <br/>Medicine Type :
                                     <field name="med_type"/>
-                                    <br/>Medicine Company:
-                                    <field name="med_company"/>
-                                    <br/>Price:
-                                    <field name="price"/>
-                                    <br/>Manufactering Date:
+                                    <br/>Manu. Date :
                                     <field name="manu_date"/>
-                                    <br/>Expiry Date:
+                                    <br/>Expiry Date :
                                     <field name="exp_date"/>
-                            <a name="%(action_medicine_view)d" type="action">Medicine</a>
+                                    <a name="%(action_medicine_view)d" type="action"></a>
                                 </strong>
+                            </div>
                         </div>
-                        </div>
-
-                     </t>
+                    </t>
                 </templates>
             </kanban>
     </field>
@@ -58,13 +51,11 @@
     <field name="view_mode">tree,form,kanban</field>
 </record>
 
-
 <record id="view_stock_kanban" model="ir.ui.view">
     <field name="name">ahm.stock.kanban</field>
     <field name="model">ahm.stock</field>
     <field name="arch" type="xml">
         <kanban>
-                <!-- <field name="stock_id"/> -->
                 <field name="name"/>
                 <field name="comp"/>
                 <templates>
@@ -72,9 +63,7 @@
                         <div t-attf-class="oe_kanban_global_click">
                             <div t-attf-class="oe_kanban_content">
                                 <strong>
-                                    <!-- Stock No: -->
-                                    <!-- <field name="stock_id"/> -->
-                                    <br/>Stock Name:
+                                    Stock Name:
                                     <field name="name"/>
                                     <br/>Medicine Company:
                                     <field name="comp"/>
@@ -93,7 +82,6 @@
     <field name="view_mode">tree,form,kanban</field>
 </record>
 
-
 <record id="view_bill_kanban" model="ir.ui.view">
     <field name="name">ahm.bill.kanban</field>
     <field name="model">ahm.bill</field>
@@ -108,9 +96,7 @@
                         <div t-attf-class="oe_kanban_global_click">
                             <div t-attf-class="oe_kanban_content">
                                 <strong>
-                                    Bill No.:
-                                    <!-- <field name="bill_id"/> -->
-                                    <br/>Name:
+                                    Name:
                                     <field name="name"/>
                                     <br/>Company:
                                     <field name="comp"/>
@@ -132,7 +118,6 @@
     <field name="res_model">ahm.bill</field>
     <field name="view_mode">tree,form,kanban</field>
 </record>
-
 
 <menuitem id="Inventory_Menu" parent="AHM.registration_menu" name="Inventory" />
 

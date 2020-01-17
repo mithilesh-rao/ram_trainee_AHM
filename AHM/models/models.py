@@ -2,7 +2,6 @@ from datetime import datetime
 from odoo.tools import DEFAULT_SERVER_DATE_FORMAT
 from odoo import models, fields, api, exceptions
 
-
 class Health(models.Model):
     _name = 'ahm.health'
     _description = "AHM Health"
@@ -12,8 +11,7 @@ class Health(models.Model):
     starting_date = fields.Date(string="Starting Date")
     ending_date = fields.Date(string="Ending Date")
     duration = fields.Integer(compute="_compute_duration")
-    graph_field = fields.Float("Graph")
-
+    graph_field = fields.Float()
 
     def _compute_duration(self):
         for i in self:

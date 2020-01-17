@@ -12,5 +12,5 @@ class Stock(models.TransientModel):
     def get_default_stock(self):
         self.env['ahm.stock'].create({
             'name': self.stock_id,
-            'comp': ""
+            'comp': self.comp,
         })

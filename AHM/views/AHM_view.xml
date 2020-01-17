@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-<!-- Search View -->
-
 <record id="health_search_view" model="ir.ui.view">
     <field name="name">ahm.health.search</field>
     <field name="model">ahm.health</field>
@@ -10,15 +8,9 @@
         <search>
             <field name="duration"/>
             <field name="starting_date" string="Starting Date" filter_domain="[('starting_date', 'like',self)]"/>
-
-            <!-- <group string="Group BY">
-                <filter name="group_by_duration" string="Duration" context="{'group_by' : 'duration'}" />
-            </group> -->
         </search>
     </field>
 </record>
-
-<!-- Search View -->
 
 <record id="health_calendar_view" model="ir.ui.view">
     <field name="name">ahm.health.calendar</field>
@@ -30,14 +22,12 @@
     </field>
 </record>
 
-<record id="health_graph_view" model="ir.ui.view">
+<record id="view_health_graph" model="ir.ui.view">
     <field name="name">ahm.health.calendar</field>
     <field name="model">ahm.health</field>
     <field name="arch" type="xml">
         <graph string="Graph">
-            <!-- <field name="starting_date"/>
-            <field name="ending_date"/> -->
-            <field name="graph_field" type="row"/>
+            <field name="graph_field" type="col"/>
         </graph>
     </field>
 </record>
@@ -48,9 +38,10 @@
     <field name="view_mode">tree,form,calendar,graph</field>
 </record>
 
-    <menuitem id="registration_menu" name="AHM" sequence="1"/>
     <menuitem id="Appointment_Menu" name="Registration" parent="registration_menu"/>
 
-    <menuitem id="calendar_sub_menu_1" name="Health" parent="AHM.Appointment_Menu" action="health_action" sequence="1"/>
+    <menuitem id="registration_menu" name="Animal Health Monitoring" sequence="1"/>
+
+    <menuitem id="health_sub_menu_1" name="Health" parent="registration_menu" action="health_action" sequence="1"/>
     
 </odoo>

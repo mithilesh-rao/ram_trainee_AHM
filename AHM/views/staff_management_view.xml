@@ -52,13 +52,11 @@
     </field>
 </record>
 
-
 <record id="view_registration_kanban" model="ir.ui.view">
     <field name="name">ahm.registration.kanban</field>
     <field name="model">ahm.registration</field>
     <field name="arch" type="xml">
         <kanban>
-            <!-- <field name="name" context="{'group_by': 'name'}"/> -->
                 <field name="name"/>
                 <field name="image" widget="oe_avatar"/>
                 <field name="contact"/>
@@ -92,8 +90,6 @@
     </field>
 </record>
 
-
-
 <record id="registration_action" model="ir.actions.act_window">
     <field name="name">Doctor Registration</field>
     <field name="res_model">ahm.registration</field>
@@ -106,13 +102,11 @@
     <field name="arch" type="xml">
         <tree string="Animal Registration Form">
             <field name="org_name"/>
-            <field name="org_registration_no"/>
             <field name="contact"/>
+            <field name="helpline_number"/>
             <field name="email"/>
             <field name="facility"/>
             <field name="address"/>
-            <field name="visiting_time"/>
-            <field name="helpline_number"/>
         </tree>
     </field>
 </record>
@@ -123,10 +117,11 @@
     <field name="view_mode">tree,form</field>
 </record>
 
-
     <menuitem id="staff_management" name="Staff Management" parent="AHM.registration_menu"/>
 
     <menuitem id="registration_sub_menu_1" name="Doctor Registration" parent="staff_management" action="registration_action" sequence="1"/>
+
+     <menuitem id="appointment_sub_menu_1" name="Appointment" parent="AHM.staff_management" action="appointment_action" sequence="1"/>
 
     <menuitem id="organization_registration_sub_menu_1" name="Organization Registration" parent="staff_management" action="organization_registration_action"/>
 

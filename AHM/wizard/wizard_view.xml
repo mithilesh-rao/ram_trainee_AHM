@@ -5,30 +5,28 @@
             <field name="name">ahm.stocks.transient.wizard</field>
             <field name="model">ahm.stocks.transient</field>
             <field name="arch" type="xml">
-                <form string="Hi i am wizard">
+                <form string="Wizard">
                     <group>
                         <field name="stock_id"/>
+                        <field name="name"/>
+                        <field name="comp"/>
                     </group>
                     <footer>
-                        <button name="get_default_stock" 
-                            string="Finished" type="object" 
-                            class="btn-primary"/>
-                        <button string="Cancel" 
-                            class="btn-default" 
-                            special="cancel" />
+                        <button name="get_default_stock" string="Finished" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel" />
                     </footer>
                 </form>
             </field>
         </record>
 
         <record id="action_view_wizard" model="ir.actions.act_window">
-            <field name="name">Hi i am a wizard</field>
+            <field name="name">Wizard</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">ahm.stocks.transient</field>
             <field name="view_id" ref="ahm_stocks_wizard"/>
             <field name="target">new</field>
         </record>
 
-        <menuitem id="wizard_memu" name="wizard Menu" parent="AHM.Inventory_Menu" sequence="20" action="action_view_wizard"/>
+        <menuitem id="wizard_memu" name="Wizard Menu" parent="AHM.Inventory_Menu" action="action_view_wizard"/>
     </data>
 </openerp>
