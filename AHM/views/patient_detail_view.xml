@@ -210,11 +210,11 @@
     <field name="view_mode">tree,form</field>
 </record>
 
-    <menuitem id="confi_menu" parent="registration_menu" name="Configuration"/>
+    <menuitem id="confi_menu" parent="registration_menu" name="Configuration" sequence="6"/>
 
-    <menuitem id="breed_type_sub_menu_1" name="Breed Type" parent="AHM.confi_menu" action="breed_type_action"/>
+    <menuitem id="breed_type_sub_menu_1" name="Breed Type" parent="AHM.confi_menu" action="breed_type_action" />
 
-    <menuitem id="patient_detail_sub_menu_1" name="Patient Detail" parent="AHM.Appointment_Menu" action="patient_detail_action"/>
+    <menuitem id="patient_detail_sub_menu_1" name="Patient Detail" parent="AHM.Appointment_Menu" action="patient_detail_action" sequence="3"/>
 
     <menuitem id="animal_registration_sub_menu_1" name="Animal Registration" parent="AHM.Appointment_Menu" action="animal_registration_action" sequence="1"/>    
 

@@ -43,6 +43,6 @@
     
     <menuitem id="Appointment_Menu" name="Registration" parent="registration_menu"/>
 
-    <menuitem id="health_sub_menu_1" name="Health" parent="registration_menu" action="health_action"/>
+    <menuitem id="health_sub_menu_1" name="Health" parent="registration_menu" action="health_action" sequence="5"/>
 
 </odoo>

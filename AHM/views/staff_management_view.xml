@@ -120,7 +120,7 @@
     <field name="view_mode">tree,form</field>
 </record>
 
-    <menuitem id="staff_management" name="Staff Management" parent="AHM.registration_menu"/>
+    <menuitem id="staff_management" name="Staff Management" parent="AHM.registration_menu" sequence="2"/>
 
     <menuitem id="registration_sub_menu_1" name="Doctor Registration" parent="staff_management" action="registration_action" sequence="1"/>
 

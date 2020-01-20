@@ -119,7 +119,7 @@
     <field name="view_mode">tree,form,kanban</field>
 </record>
 
-<menuitem id="Inventory_Menu" parent="AHM.registration_menu" name="Inventory" />
+<menuitem id="Inventory_Menu" parent="AHM.registration_menu" name="Inventory" sequence="4" />
 
 <menuitem id="medicine_sub_menu_1" name="Medicine" parent="Inventory_Menu" action="medicine_action" sequence="2" />
 
