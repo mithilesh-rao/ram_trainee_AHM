@@ -107,6 +107,9 @@
             <field name="email"/>
             <field name="facility"/>
             <field name="address"/>
+            <field name="opening_time" widget="float_time"/>
+            <field name="closing_time" widget="float_time"/>
+            <field name="workingdays"/>
         </tree>
     </field>
 </record>

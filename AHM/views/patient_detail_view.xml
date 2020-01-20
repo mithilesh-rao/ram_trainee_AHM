@@ -92,6 +92,7 @@
         <tree string="Appointment Form">
             <field name="name"/>
             <field name="contact"/>
+            <field name="visiting_date"/>
             <field name="visiting_time"/>
             <field name="visit_charges"/>
             <field name="address"/>
@@ -176,9 +177,46 @@
     <field name="res_model">ahm.patient.detail</field>
     <field name="view_mode">tree,form,kanban</field>
 </record>
-    
+
+
+<record id="breed_type_form_view" model="ir.ui.view">
+    <field name="name">ahm.breed.type.form</field>
+    <field name="model">ahm.breed.type</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="b_type"/>
+                </group>        
+            </sheet>
+        </form>
+    </field>
+</record>
+
+
+<record id="breed_type_tree_view" model="ir.ui.view">
+    <field name="name">ahm.breed.type.tree</field>
+    <field name="model">ahm.breed.type</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="b_type"/>
+        </tree>
+    </field>
+</record>
+
+<record id="breed_type_action" model="ir.actions.act_window">
+    <field name="name">Breed Type</field>
+    <field name="res_model">ahm.breed.type</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+    <menuitem id="confi_menu" parent="registration_menu" name="Configuration"/>
+
+    <menuitem id="breed_type_sub_menu_1" name="Breed Type" parent="AHM.confi_menu" action="breed_type_action"/>
+
     <menuitem id="patient_detail_sub_menu_1" name="Patient Detail" parent="AHM.Appointment_Menu" action="patient_detail_action"/>
 
     <menuitem id="animal_registration_sub_menu_1" name="Animal Registration" parent="AHM.Appointment_Menu" action="animal_registration_action" sequence="1"/>    
+
 
 </odoo>

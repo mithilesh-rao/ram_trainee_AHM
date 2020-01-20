@@ -38,3 +38,19 @@ class OrganizationRegistration(models.Model):
     email = fields.Char(string="Email", required=True)
     facility = fields.Text(string="Facility", required=True)
     address = fields.Text(string="Address",required=True)
+    opening_time = fields.Many2one(comodel_name="ahm.time",string="Clinic Opening Time")
+    closing_time = fields.Many2one(comodel_name="ahm.time",string="Clinic Closing Time")
+    workingdays = fields.Many2many(comodel_name="ahm.working.days", string="Working Days")
+
+class WorkingDays(models.Model):
+    _name = 'ahm.working.days'
+    _description = "AHM Working Days"
+
+    name = fields.Char(string="Week Day")
+
+
+class Time(models.Model):
+    _name = 'ahm.time'
+    _description = "AHM Time"
+
+    name = fields.Float(string="Time")

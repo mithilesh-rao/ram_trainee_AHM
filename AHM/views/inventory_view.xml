@@ -127,4 +127,5 @@
 
 <menuitem id="bill_sub_menu_1" name="Stock Bill" parent="Inventory_Menu" action="bill_action" sequence="2" />
 
+
 </odoo>

@@ -24,4 +24,5 @@
 
     <menuitem id="total_charges_sub_menu_1" name="Patient Total Bill" parent="AHM.Appointment_Menu" action="total_charges_action"/>
 
+
 </odoo>

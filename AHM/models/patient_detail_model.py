@@ -21,9 +21,19 @@ class Appointment(models.Model):
     # app_id = fields.(comodel_name='ahm.animal.registration',ondelete="cascade")
     name = fields.Char(string="Name", required=True)
     contact = fields.Char(string="Mobile No.", required=True)
-    visiting_time = fields.Datetime(string='Visiting Time')
+    visiting_date = fields.Date(string="Appointment Date")
+    visiting_time = fields.Many2one(comodel_name="ahm.time", string='Appointment Time')
     visit_charges = fields.Integer(string="Visiting Charges")
     address = fields.Char(string="Address", required=True)
+
+    @api.onchange("visiting_date")
+    def visitingtime(self):
+        time_env = self.env['ahm.time'].search([])
+        appointment = self.env['ahm.appointment'].search([])
+        appointment_env = self.env['ahm.appointment'].search([('visiting_date','=',self.visiting_date)])
+        print("-----------------------", appointment_env.visiting_time.ids)
+        return {'domain' : {'visiting_time' : [('id','not in', appointment_env.visiting_time.ids)]}}
+
  
 class PatientDetail(models.Model):
     _name = 'ahm.patient.detail'
@@ -35,3 +45,15 @@ class PatientDetail(models.Model):
     prescription = fields.Char(string="Prescription")
     image = fields.Binary(string="Image",attachment=True)
 
+class BreedType(models.Model):
+    _name = 'ahm.breed.type'
+    _description = "AHM Breed Type"
+
+    b_type = fields.Selection(string="Select Breed Type",
+        selection=[('cow', 'Cow'), 
+        ('dog', 'Dog'), 
+        ('cat', 'Cat'),
+        ('horse','Horse'),
+        ('buffalo','Buffalo'),
+        ('rabbit','Rabbit')],
+        default='dog')

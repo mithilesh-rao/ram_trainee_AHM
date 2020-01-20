@@ -38,10 +38,11 @@
     <field name="view_mode">tree,form,calendar,graph</field>
 </record>
 
-    <menuitem id="Appointment_Menu" name="Registration" parent="registration_menu"/>
 
     <menuitem id="registration_menu" name="Animal Health Monitoring" sequence="1"/>
-
-    <menuitem id="health_sub_menu_1" name="Health" parent="registration_menu" action="health_action" sequence="1"/>
     
+    <menuitem id="Appointment_Menu" name="Registration" parent="registration_menu"/>
+
+    <menuitem id="health_sub_menu_1" name="Health" parent="registration_menu" action="health_action"/>
+
 </odoo>

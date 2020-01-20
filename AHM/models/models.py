@@ -1,6 +1,6 @@
-from datetime import datetime
+from datetime import time
 from odoo.tools import DEFAULT_SERVER_DATE_FORMAT
-from odoo import models, fields, api, exceptions
+from odoo import models, fields, api
 
 class Health(models.Model):
     _name = 'ahm.health'
@@ -20,4 +20,3 @@ class Health(models.Model):
                 i.duration = delta.days
             else:
                 i.duration = 2
-                
