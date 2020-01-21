@@ -29,8 +29,6 @@
 		<field name="name">Saturday</field>
 	</record>
 
-
-
 	<record id="time1" model="ahm.time">
 		<field name="name">1.0</field>
 	</record>

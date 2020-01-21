@@ -22,26 +22,51 @@
     </field>
 </record>
 
-<record id="view_health_graph" model="ir.ui.view">
-    <field name="name">ahm.health.calendar</field>
+<record id=">ahm_health_graph_view" model="ir.ui.view">
+    <field name="name">ahm.health.graph</field>
     <field name="model">ahm.health</field>
     <field name="arch" type="xml">
         <graph string="Graph">
-            <field name="graph_field" type="col"/>
+            <field name="graph_field" type="measure"/>
         </graph>
     </field>
 </record>
 
-<record id="health_action" model="ir.actions.act_window">
-    <field name="name">Health</field>
-    <field name="res_model">ahm.health</field>
-    <field name="view_mode">tree,form,calendar,graph</field>
+<record id="view_health_pivot" model="ir.ui.view">
+   <field name="name">ahm.health.pivot</field>
+   <field name="model">ahm.health</field>
+   <field name="arch" type="xml">
+         <graph string="Graph" type="pivot">
+            <field name="graph_field" type="measure"/>
+        </graph>
+   </field>
 </record>
 
 
-    <menuitem id="registration_menu" name="Animal Health Monitoring" sequence="1"/>
+<record id="view_health_dashboard" model="ir.ui.view">
+   <field name="name">ahm.health.dashboard</field>
+   <field name="model">ahm.health</field>
+   <field name="arch" type="xml">
+         <dashboard>
+            <view type="pivot" ref="AHM.view_health_pivot"/>
+            <view type="graph" ref="AHM.ahm_health_graph_view"/>
+            <view type="calendar" ref="AHM.health_calendar_view"/>
+         </dashboard>
+   </field>
+</record>
+
+
+<record id="health_action" model="ir.actions.act_window">
+    <field name="name">Health</field>
+    <field name="res_model">ahm.health</field>
+    <field name="view_mode">tree,form,calendar,graph,pivot,dashboard</field>
+</record>
+
+
+
+    <menuitem id="registration_menu" name="Animal Health Monitoring" web_icon="AHM,static/description/iv.png"/>
     
-    <menuitem id="Appointment_Menu" name="Registration" parent="registration_menu"/>
+    <menuitem id="Appointment_Menu" name="Registration" parent="registration_menu" web_icon="AHM,static/description/iv.png"/>
 
     <menuitem id="health_sub_menu_1" name="Health" parent="registration_menu" action="health_action" sequence="5"/>
 

@@ -14,3 +14,4 @@ access_ahm_bill_public,access_ahm_bill_public,model_ahm_bill,,1,1,1,1
 access_ahm_breed_type,access_ahm_breed_type,model_ahm_breed_type,base.group_user,1,1,1,1
 access_ahm_working_days,access_ahm_working_days,model_ahm_working_days,base.group_user,1,1,1,1
 access_ahm_time,access_ahm_time,model_ahm_time,base.group_user,1,1,1,1
+access_ahm_health_dashboard',access_ahm_health_dashboard,model_ahm_health_dashboard,base.group_user,1,1,1,1 

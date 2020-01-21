@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-
 <record id="registration_tree_view" model="ir.ui.view">
     <field name="name">ahm.registration.tree</field>
     <field name="model">ahm.registration</field>
@@ -15,7 +14,6 @@
         </tree>
     </field>
 </record>
-
 
 <record id="registration_form_view" model="ir.ui.view">
     <field name="name">ahm.registration.form</field>
@@ -101,18 +99,56 @@
     <field name="model">ahm.organization.registration</field>
     <field name="arch" type="xml">
         <tree string="Animal Registration Form">
-            <field name="org_name"/>
-            <field name="contact"/>
-            <field name="helpline_number"/>
-            <field name="email"/>
-            <field name="facility"/>
-            <field name="address"/>
-            <field name="opening_time" widget="float_time"/>
-            <field name="closing_time" widget="float_time"/>
-            <field name="workingdays"/>
+                <field name="org_name"/>
+                <field name="contact"/>
+                <field name="helpline_number"/>
+                <field name="email"/>
+                <field name="facility"/>
+                <field name="address"/>
+                <field name="opening_time"/>
+                <field name="closing_time"/>
+                <field name="workingdays"/>
         </tree>
     </field>
 </record>
+
+
+<record id="organization_registration_form_view" model="ir.ui.view">
+    <field name="name">ahm.organization_registration.form</field>
+    <field name="model">ahm.organization.registration</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group string="Organization Registration Detail">
+                    <notebook>
+                        <page string="Main">
+                            <group>
+                                <group>
+                                    <field name="org_name"/>
+                                    <field name="helpline_number"/>
+                                    <field name="contact"/>
+                                    <field name="email"/>
+                                </group>
+                            </group>    
+                        </page>
+                        <page string="Extra Details">
+                            <group>
+                                <group>
+                                    <field name="facility"/>
+                                    <field name="address"/>
+                                    <field name="opening_time"/>
+                                    <field name="closing_time"/>
+                                    <field name="workingdays"/>
+                                </group>    
+                            </group>
+                        </page>
+                    </notebook>
+                </group>    
+            </sheet>
+        </form>
+    </field>
+</record>
+
 
 <record id="organization_registration_action" model="ir.actions.act_window">
     <field name="name">Organization Registration</field>

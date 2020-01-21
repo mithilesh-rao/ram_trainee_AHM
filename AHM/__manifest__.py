@@ -1,7 +1,7 @@
 {
     'name': "Animal Health Monitoring",
     'version': '1.0',
-    'depends': ['base','website'],
+    'depends': ['base','website','web_dashboard'],
     'author': "Animal Health Monitorig",
     'category': 'Category',
     'description': """
