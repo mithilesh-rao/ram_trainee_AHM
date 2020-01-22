@@ -11,23 +11,8 @@ class Registration(models.Model):
     contact = fields.Char(string="Contact")
     email = fields.Char(string="Email", required=True)
     address = fields.Char(string="Address", required=True)
-    visiting_time = fields.Datetime(string='Visiting Time')
     specialization = fields.Char(string="Specialization", required=True)
-    degree_certificate  = fields.Binary()
-    status = fields.Selection([
-        ('draft', 'Draft'),
-        ('confirm', 'Confirm'),
-        ('done', 'Done')], default='draft')
-
-    def draft(self):
-        self.write({"status": "draft"})
-
-    def confirm(self):
-        self.write({"status": "confirm"})
-
-    def done(self):
-        self.write({"status": "done"})
-
+    
 class OrganizationRegistration(models.Model):
     _name = 'ahm.organization.registration'
     _description = "AHM Organization Registration"

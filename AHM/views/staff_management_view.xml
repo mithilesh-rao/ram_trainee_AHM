@@ -20,12 +20,6 @@
     <field name="model">ahm.registration</field>
     <field name="arch" type="xml">
         <form string="Registration Form">            
-            <header>
-                <button name="draft" string="Draft" type="object" decoration-warning="status=='draft'" />
-                <button name="confirm" string="Confirm" type="object" decoration-info="status=='confirm'" />
-                <button name="done" string="Done" type="object" decoration-success="status=='done'"/>
-                <field name="status" widget="statusbar"/>
-            </header>
             <sheet>
                 <group>
                     <group>
@@ -40,9 +34,7 @@
                         <field name="address"/>
                     </group>
                     <group string="Additional">
-                        <field name="visiting_time"/>
                         <field name="specialization"/>
-                        <field name="degree_certificate" widget="image" class="oe_avatar oe_left"/>
                     </group>
                 </group>
             </sheet>
@@ -60,10 +52,7 @@
                 <field name="contact"/>
                 <field name="email"/>
                 <field name="address"/>
-                <field name="visiting_time"/>
                 <field name="specialization"/>
-                <field name="degree_certificate"/>
-                <field name="status"/>
                 <field name="id"/>
                 <templates>
                      <t t-name="kanban-box">
@@ -119,30 +108,20 @@
     <field name="arch" type="xml">
         <form>
             <sheet>
-                <group string="Organization Registration Detail">
-                    <notebook>
-                        <page string="Main">
-                            <group>
-                                <group>
-                                    <field name="org_name"/>
-                                    <field name="helpline_number"/>
-                                    <field name="contact"/>
-                                    <field name="email"/>
-                                </group>
-                            </group>    
-                        </page>
-                        <page string="Extra Details">
-                            <group>
-                                <group>
-                                    <field name="facility"/>
-                                    <field name="address"/>
-                                    <field name="opening_time"/>
-                                    <field name="closing_time"/>
-                                    <field name="workingdays"/>
-                                </group>    
-                            </group>
-                        </page>
-                    </notebook>
+                <group>
+                    <group string="Organization Registration Detail">
+                        <field name="org_name"/>
+                        <field name="helpline_number"/>
+                        <field name="contact"/>
+                        <field name="email"/>
+                        <field name="facility"/>
+                    </group>
+                    <group  string="Working Details">
+                        <field name="address"/>
+                        <field name="opening_time"/>
+                        <field name="closing_time"/>
+                        <field name="workingdays"/>
+                    </group>
                 </group>    
             </sheet>
         </form>
@@ -156,7 +135,7 @@
     <field name="view_mode">tree,form</field>
 </record>
 
-    <menuitem id="staff_management" name="Staff Management" parent="AHM.registration_menu" sequence="2"/>
+    <menuitem id="staff_management" name="Staff" parent="AHM.registration_menu" sequence="2"/>
 
     <menuitem id="registration_sub_menu_1" name="Doctor Registration" parent="staff_management" action="registration_action" sequence="1"/>
 

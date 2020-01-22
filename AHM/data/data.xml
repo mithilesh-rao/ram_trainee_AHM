@@ -95,7 +95,7 @@
 	<record id="time21" model="ahm.time">
 		<field name="name">21.0</field>
 	</record>
-	<record id="time21" model="ahm.time">
+	<record id="time22" model="ahm.time">
 		<field name="name">22.0</field>
 	</record>
 	<record id="time23" model="ahm.time">
@@ -103,6 +103,218 @@
 	</record>
 	<record id="time24" model="ahm.time">
 		<field name="name">24.0</field>
+	</record>
+
+	<record id="registration0" model="ahm.organization.registration">
+		<field name="org_name">Help Street</field>
+		<field name="contact">180045620</field>
+		<field name="helpline_number">123654789</field>
+		<field name="email">helpstreet@gmail.com</field>
+		<field name="facility">OPD,Surgery</field>
+		<field name="address">Surat</field>
+		<field name="opening_time" ref="AHM.time8"></field>
+		<field name="closing_time" ref="AHM.time22"></field>
+		<field name="workingdays" eval="[(6,0,[ref('AHM.monday')])]"></field>
+	</record>
+
+	<record id="registration1" model="ahm.organization.registration">
+		<field name="org_name">Animal Love N Care</field>
+		<field name="contact">180045620</field>
+		<field name="helpline_number">123654789</field>
+		<field name="email">alnc@gmail.com</field>
+		<field name="facility">OPD,Surgery</field>
+		<field name="address">Ahemdabad</field>
+		<field name="opening_time" ref="AHM.time8"></field>
+		<field name="closing_time" ref="AHM.time22"></field>
+		<field name="workingdays" eval="[(6,0,[ref('AHM.monday'),ref('AHM.tuesday')])]"></field>
+	</record>
+
+<record id="registration2" model="ahm.organization.registration">
+		<field name="org_name">Animal Love N Care</field>
+		<field name="contact">180045620</field>
+		<field name="helpline_number">123654789</field>
+		<field name="email">alnc@gmail.com</field>
+		<field name="facility">OPD,Surgery</field>
+		<field name="address">Rajkot</field>
+		<field name="opening_time" ref="AHM.time8"></field>
+		<field name="closing_time" ref="AHM.time22"></field>
+		<field name="workingdays" eval="[(6,0,[ref('AHM.monday'),ref('AHM.tuesday')])]"></field>
+	</record>
+
+	<record id="registration3" model="ahm.organization.registration">
+		<field name="org_name">Love N Care Veterinary Hospital</field>
+		<field name="contact">180045620</field>
+		<field name="helpline_number">123654789</field>
+		<field name="email">lncvh@gmail.com</field>
+		<field name="facility">OPD,Surgery</field>
+		<field name="address">Navsari</field>
+		<field name="opening_time" ref="AHM.time10"></field>
+		<field name="closing_time" ref="AHM.time22"></field>
+		<field name="workingdays" eval="[(6,0,[ref('AHM.monday'),ref('AHM.tuesday'),ref('AHM.wednesday'),ref('AHM.thursday'),ref('AHM.friday'),ref('AHM.saturday')])]"></field>
+	</record>
+
+	<record id="registration4" model="ahm.organization.registration">
+		<field name="org_name">Government Veterinary Hospital</field>
+		<field name="contact">180045620</field>
+		<field name="helpline_number">123654789</field>
+		<field name="email">gvh@gov.in</field>
+		<field name="facility">OPD,Surgery,Observation</field>
+		<field name="address">Gandhinagar</field>
+		<field name="opening_time" ref="AHM.time8"></field>
+		<field name="closing_time" ref="AHM.time22"></field>
+		<field name="workingdays" eval="[(6,0,[ref('AHM.monday'),ref('AHM.tuesday'),ref('AHM.wednesday'),ref('AHM.thursday'),ref('AHM.friday'),ref('AHM.saturday')])]"></field>
+	</record>
+
+	<record id="registration5" model="ahm.organization.registration">
+		<field name="org_name">Domestic Animal Health Care</field>
+		<field name="contact">180045620</field>
+		<field name="helpline_number">123654789</field>
+		<field name="email">dahc@gmail.com</field>
+		<field name="facility">OPD,Surgery</field>
+		<field name="address">Noda</field>
+		<field name="opening_time" ref="AHM.time8"></field>
+		<field name="closing_time" ref="AHM.time22"></field>
+		<field name="workingdays" eval="[(6,0,[ref('AHM.monday'),ref('AHM.tuesday'),ref('AHM.wednesday'),ref('AHM.thursday'),ref('AHM.friday'),ref('AHM.saturday')])]"></field>
+	</record>
+
+	<record id="registration6" model="ahm.organization.registration">
+		<field name="org_name">Pet Love And Care</field>
+		<field name="contact">180045620</field>
+		<field name="helpline_number">123654789</field>
+		<field name="email">plnc@gmail.com</field>
+		<field name="facility">OPD,Surgery</field>
+		<field name="address">Surat</field>
+		<field name="opening_time" ref="AHM.time8"></field>
+		<field name="closing_time" ref="AHM.time22"></field>
+		<field name="workingdays" eval="[(6,0,[ref('AHM.monday'),ref('AHM.tuesday'),ref('AHM.wednesday'),ref('AHM.thursday'),ref('AHM.friday'),ref('AHM.saturday')])]"></field>
+	</record>
+
+	<record id="registration7" model="ahm.organization.registration">
+		<field name="org_name">Animal Love N Care</field>
+		<field name="contact">180045620</field>
+		<field name="helpline_number">123654789</field>
+		<field name="email">alnc@gmail.com</field>
+		<field name="facility">OPD,Surgery</field>
+		<field name="address">Surat</field>
+		<field name="opening_time" ref="AHM.time8"></field>
+		<field name="closing_time" ref="AHM.time22"></field>
+		<field name="workingdays" eval="[(6,0,[ref('AHM.monday'),ref('AHM.tuesday'),ref('AHM.wednesday'),ref('AHM.thursday'),ref('AHM.friday'),ref('AHM.saturday')])]"></field>
+	</record>
+
+	<record id="registration8" model="ahm.registration">
+		<field name="name">Abhijeet</field>
+		<field name="image" type="base64" file="AHM/static/src/img/avatar.jpeg"/>
+		<field name="contact">180045620</field>
+		<field name="address">123654789</field>
+		<field name="email">abhijeet@gmail.com</field>
+		<field name="specialization">In Dog</field>
+	</record>
+
+	<record id="registration9" model="ahm.registration">
+		<field name="name">Hardeep</field>
+		<field name="image" type="base64" file="AHM/static/src/img/avatar.jpeg"/>
+		<field name="contact">180045620</field>
+		<field name="address">123654789</field>
+		<field name="email">hardeep@gmail.com</field>
+		<field name="specialization">In Cow</field>
+	</record>
+
+	<record id="registration10" model="ahm.registration">
+		<field name="name">Avnish</field>
+		<field name="image" type="base64" file="AHM/static/src/img/avatar.jpeg"/>
+		<field name="contact">180045620</field>
+		<field name="address">123654789</field>
+		<field name="email">avi@gmail.com</field>
+		<field name="specialization">In Cat</field>
+	</record>
+
+	<record id="registration11" model="ahm.registration">
+		<field name="name">Abhay</field>
+		<field name="image" type="base64" file="AHM/static/src/img/avatar.jpeg"/>
+		<field name="contact">180045620</field>
+		<field name="address">123654789</field>
+		<field name="email">abhay@gmail.com</field>
+		<field name="specialization">In Buffalo</field>
+	</record>
+
+	<record id="registration12" model="ahm.registration">
+		<field name="name">Meet</field>
+		<field name="image" type="base64" file="AHM/static/src/img/avatar.jpeg"/>
+		<field name="contact">180045620</field>
+		<field name="address">123654789</field>
+		<field name="email">meet@gmail.com</field>
+		<field name="specialization">OPD,Surgery</field>
+	</record>
+
+	<record id="animal0" model="ahm.animal.registration">
+		<field name="breed_name">Gillu</field>
+		<field name="breed_type">Squiral</field>
+		<field name="image" type="base64" file="AHM/static/src/img/sqi.jpeg"/>
+		<field name="onwer_contact">45654789</field>
+		<field name="email">Hari@gmail.com</field>
+		<field name="address">Ghandhnagar</field>
+	</record>
+
+	<record id="animal1" model="ahm.animal.registration">
+		<field name="breed_name">Bhaisasing</field>
+		<field name="breed_type">Buffalo</field>
+		<field name="image" type="base64" file="AHM/static/src/img/buf.jpeg"/>
+		<field name="onwer_contact">102654789</field>
+		<field name="email">Heera@gmail.com</field>
+		<field name="address">Ratanpur</field>
+	</record>
+
+	<record id="animal2" model="ahm.animal.registration">
+		<field name="breed_name">Tommy</field>
+		<field name="breed_type">Dog</field>
+		<field name="image" type="base64" file="AHM/static/src/img/dog.jpeg"/>
+		<field name="onwer_contact">645654789</field>
+		<field name="email">Stark@gmail.com</field>
+		<field name="address">Sector 7,Ghandhnagar</field>
+	</record>
+
+	<record id="animal3" model="ahm.animal.registration">
+		<field name="breed_name">Chetak</field>
+		<field name="breed_type">Horse</field>
+		<field name="image" type="base64" file="AHM/static/src/img/horse.jpeg"/>
+		<field name="onwer_contact">45654789</field>
+		<field name="email">ramlal@gmail.com</field>
+		<field name="address">Ahemdabad</field>
+	</record>
+
+	<record id="animal4" model="ahm.animal.registration">
+		<field name="breed_name">Dhanno</field>
+		<field name="breed_type">Cow</field>
+		<field name="image" type="base64" file="AHM/static/src/img/cow.jpeg"/>
+		<field name="onwer_contact">45654789</field>
+		<field name="email">manilal@gmail.com</field>
+		<field name="address">Ghandhnagar</field>
+	</record>
+
+	<record id="pd1" model="ahm.patient.detail">
+		<field name="name">Tommy</field>
+		<field name="medicine">Herbal Medicine</field>
+		<field name="prescription">1 Time A Day</field>
+		<field name="image" type="base64" file="AHM/static/src/img/dog.jpeg"/>
+	</record>
+
+	<record id="pd2" model="ahm.patient.detail">
+		<field name="name">Gillu</field>
+		<field name="medicine">Antibiotic Syrup</field>
+		<field name="prescription">3 Times A Day</field>
+		<field name="image" type="base64" file="AHM/static/src/img/sqi.jpeg"/>
+	</record>
+	<record id="pd3" model="ahm.patient.detail">
+		<field name="name">Dhanno</field>
+		<field name="medicine">Ayurvedic Medicine</field>
+		<field name="prescription">2 Times A Day</field>
+		<field name="image" type="base64" file="AHM/static/src/img/cow.jpeg"/>
+	</record>
+	<record id="pd4" model="ahm.patient.detail">
+		<field name="name">Tommy</field>
+		<field name="medicine">Herbal Medicine</field>
+		<field name="prescription">2 Times A Day</field>
+		<field name="image" type="base64" file="AHM/static/src/img/dog.jpeg"/>
 	</record>
 
 </odoo>

@@ -56,18 +56,17 @@
 </record>
 
 
-<record id="health_action" model="ir.actions.act_window">
+<record id="view_health_dashboard" model="ir.actions.act_window">
     <field name="name">Health</field>
     <field name="res_model">ahm.health</field>
     <field name="view_mode">tree,form,calendar,graph,pivot,dashboard</field>
 </record>
 
 
-
     <menuitem id="registration_menu" name="Animal Health Monitoring" web_icon="AHM,static/description/iv.png"/>
     
-    <menuitem id="Appointment_Menu" name="Registration" parent="registration_menu" web_icon="AHM,static/description/iv.png"/>
+    <menuitem id="Appointment_Menu" name="Registration" parent="registration_menu"/>
 
-    <menuitem id="health_sub_menu_1" name="Health" parent="registration_menu" action="health_action" sequence="5"/>
+    <menuitem id="health_sub_menu_1" name="Health" parent="registration_menu" action="view_health_dashboard" sequence="5"/>
 
 </odoo>

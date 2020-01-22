@@ -27,6 +27,6 @@
             <field name="target">new</field>
         </record>
 
-        <menuitem id="wizard_memu" name="Wizard Menu" parent="AHM.Inventory_Menu" action="action_view_wizard"/>
+        <!-- <menuitem id="wizard_memu" name="Wizard Menu" parent="AHM.Inventory_Menu" action="action_view_wizard"/> -->
     </data>
 </openerp>

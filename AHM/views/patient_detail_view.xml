@@ -35,13 +35,17 @@
     <field name="arch" type="xml">
         <form>
             <sheet>
-                <group>
-                    <field name="image" widget="image" class="oe_avatar"/>
-                    <field name="breed_name"/>
-                    <field name="breed_type"/>
-                    <field name="onwer_contact"/>
-                    <field name="email"/>
-                    <field name="address"/>
+                <group string="Animal Registration Detail">
+                    <group>
+                        <field name="image" widget="image" class="oe_avatar oe_left"/>
+                        <field name="breed_name"/>
+                        <field name="breed_type"/>
+                    </group>
+                    <group> 
+                        <field name="onwer_contact"/>
+                        <field name="email"/>
+                        <field name="address"/>
+                    </group>
                 </group>        
             </sheet>
         </form>
@@ -93,9 +97,34 @@
             <field name="contact"/>
             <field name="visiting_date"/>
             <field name="visiting_time"/>
-            <field name="visit_charges"/>
+            <field name="visit_charges" />
             <field name="address"/>
+            <field name="status"/>
         </tree>
+    </field>
+</record>
+
+<record id="appointment_form_view" model="ir.ui.view">
+    <field name="name">ahm.appointment.form</field>
+    <field name="model">ahm.appointment</field>
+    <field name="arch" type="xml">
+        <form>  
+                <header>
+                    <button name="confirm" string="Appointment Confirm" type="object" decoration-info="status=='confirm'" />
+                    <button name="done" string="Done" type="object" decoration-success="status=='done'"/>
+                    <field name="status" widget="statusbar" status_visible="confirm,done"/>
+                </header>
+            <sheet>  
+                <group string="Appointment Detail">
+                    <field name="name"/>
+                    <field name="contact"/>
+                    <field name="visiting_date"/>
+                    <field name="visiting_time"/>
+                    <field name="visit_charges"/>
+                    <field name="address"/>
+                </group>
+            </sheet>
+        </form>
     </field>
 </record>
 

@@ -2,7 +2,6 @@ from datetime import datetime
 from odoo.tools import DEFAULT_SERVER_DATE_FORMAT
 from odoo import models, fields, api
 
-
 class AnimalRegistration(models.Model):
     _name = 'ahm.animal.registration'
     _description = "AHM Animal Registration"
@@ -18,22 +17,29 @@ class Appointment(models.Model):
     _name  = 'ahm.appointment'
     _description = 'AHM Appointment'
 
-    # app_id = fields.(comodel_name='ahm.animal.registration',ondelete="cascade")
     name = fields.Char(string="Name", required=True)
     contact = fields.Char(string="Mobile No.", required=True)
     visiting_date = fields.Date(string="Appointment Date")
     visiting_time = fields.Many2one(comodel_name="ahm.time", string='Appointment Time')
-    visit_charges = fields.Integer(string="Visiting Charges")
+    visit_charges = fields.Integer(string="Visiting Charges",default=450)
     address = fields.Char(string="Address", required=True)
+    status = fields.Selection([
+        ('confirm', 'Appointment Confirm'),
+        ('done', 'Done')], default='confirm')
+
+    def confirm(self):
+        self.write({"status": "confirm"})
+
+    def done(self):
+        self.write({"status": "done"})
 
     @api.onchange("visiting_date")
     def visitingtime(self):
         time_env = self.env['ahm.time'].search([])
         appointment = self.env['ahm.appointment'].search([])
         appointment_env = self.env['ahm.appointment'].search([('visiting_date','=',self.visiting_date)])
-        print("-----------------------", appointment_env.visiting_time.ids)
+        # print("-----------------------", appointment_env.visiting_time.ids)
         return {'domain' : {'visiting_time' : [('id','not in', appointment_env.visiting_time.ids)]}}
-
  
 class PatientDetail(models.Model):
     _name = 'ahm.patient.detail'
