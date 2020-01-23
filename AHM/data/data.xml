@@ -251,7 +251,7 @@
 		<field name="breed_type">Squiral</field>
 		<field name="image" type="base64" file="AHM/static/src/img/sqi.jpeg"/>
 		<field name="onwer_contact">45654789</field>
-		<field name="email">Hari@gmail.com</field>
+		<field name="email">hari@gmail.com</field>
 		<field name="address">Ghandhnagar</field>
 	</record>
 
@@ -260,7 +260,7 @@
 		<field name="breed_type">Buffalo</field>
 		<field name="image" type="base64" file="AHM/static/src/img/buf.jpeg"/>
 		<field name="onwer_contact">102654789</field>
-		<field name="email">Heera@gmail.com</field>
+		<field name="email">heera@gmail.com</field>
 		<field name="address">Ratanpur</field>
 	</record>
 
@@ -269,7 +269,7 @@
 		<field name="breed_type">Dog</field>
 		<field name="image" type="base64" file="AHM/static/src/img/dog.jpeg"/>
 		<field name="onwer_contact">645654789</field>
-		<field name="email">Stark@gmail.com</field>
+		<field name="email">stark@gmail.com</field>
 		<field name="address">Sector 7,Ghandhnagar</field>
 	</record>
 
@@ -315,6 +315,90 @@
 		<field name="medicine">Herbal Medicine</field>
 		<field name="prescription">2 Times A Day</field>
 		<field name="image" type="base64" file="AHM/static/src/img/dog.jpeg"/>
+	</record>
+	
+	<record id="con1" model="ahm.breed.type">
+		<field name="b_type">dog</field>
+	</record>
+
+	<record id="con2" model="ahm.breed.type">
+		<field name="b_type">horse</field>
+	</record>
+
+	<record id="con3" model="ahm.breed.type">
+		<field name="b_type">cat</field>
+	</record>
+	<record id="con4" model="ahm.breed.type">
+		<field name="b_type">cow</field>
+	</record>
+
+	<record id="con5" model="ahm.breed.type">
+		<field name="b_type">buffalo</field>
+	</record>
+
+	<record id="medicine0" model="ahm.medicine">
+		<field name="med_id">12364</field>
+		<field name="med_name">Herbal Medicine</field>
+		<field name="med_type">capsule</field>
+		<field name="med_company">Ayurvedic</field>
+		<field name="price">4580</field>
+		<field name="manu_date">2018-01-01</field>
+		<field name="exp_date">2022-06-06</field>
+	</record>
+
+	<record id="medicine1" model="ahm.medicine">
+		<field name="med_id">012364</field>
+		<field name="med_name">Antibiotic</field>
+		<field name="med_type">capsule</field>
+		<field name="med_company">Ayurvedic</field>
+		<field name="price">7880</field>
+		<field name="manu_date">2016-05-01</field>
+		<field name="exp_date">2022-06-06</field>
+	</record>
+
+	<record id="medicine2" model="ahm.medicine">
+		<field name="med_id">12364</field>
+		<field name="med_name">Herbal</field>
+		<field name="med_type">syrup</field>
+		<field name="med_company">Ayurvedic</field>
+		<field name="price">4580</field>
+		<field name="manu_date">2018-01-01</field>
+		<field name="exp_date">2022-06-06</field>
+	</record>
+
+	<record id="stock0" model="ahm.stock">
+		<field name="name">Capsules</field>
+		<field name="comp">Dr. Reddy</field>
+	</record>
+
+	<record id="stock1" model="ahm.stock">
+		<field name="name">Tablet</field>
+		<field name="comp">Cipla</field>
+	</record>
+
+	<record id="stock2" model="ahm.stock">
+		<field name="name">Vaccine</field>
+		<field name="comp">Cipla</field>
+	</record>
+
+	<record id="stock3" model="ahm.stock">
+		<field name="name">Injection</field>
+		<field name="comp">Ranbaxy</field>
+	</record>
+
+	<record id="stock4" model="ahm.stock">
+		<field name="name">Herbal Medicine</field>
+		<field name="comp">Herbal Care</field>
+	</record>
+
+	<record id="stock5" model="ahm.stock">
+		<field name="name">Antibiotic</field>
+		<field name="comp">Ayurvedic Pharmacy</field>
+	</record>
+
+	<record id="stock6" model="ahm.stock">
+		<field name="name">Injection</field>
+		<field name="comp">Ranbaxy</field>
 	</record>
 
 </odoo>

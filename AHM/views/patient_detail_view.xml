@@ -156,10 +156,12 @@
         <form>
             <sheet>
                 <group string="Patient Detail">
+                    <field name="image" widget="image" class="oe_avatar oe_left" width="65" height="65"/>
+                    <field name="app_id"/>
+                    <field name="contact"/>
                     <field name="name"/>
                     <field name="medicine"/>
                     <field name="prescription"/>
-                    <field name="image" widget="image" class="oe_avatar oe_left" width="65" height="65"/>
                 </group>
             </sheet>
         </form>

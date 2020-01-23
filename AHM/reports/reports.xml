@@ -29,4 +29,49 @@
         </t>
     </template>
 
+
+    <report
+        id="report_patient_detail"
+        model="ahm.patient.detail"
+        string="Patient Report"
+        name="AHM.report_report_view"
+        file="AHM.report_patient_detail"
+        report_type="qweb-pdf" />
+
+
+    <template id="report_report_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout"> 
+                    <h1>Patient Report Detail</h1><br/>
+                    <div class="page" string="Patient Report">
+                        <p> 
+                           <img t-attf-src="data:image/*;base64,{{doc.image}}"/>
+                        </p>
+                        <p> 
+                            <h1>Name</h1> 
+                            <span t-field="doc.app_id"/>
+                        </p>
+                        <p> 
+                            <h1>Breed Name</h1> 
+                            <span t-field="doc.name"/>
+                        </p>
+                        <p> 
+                            <h1>Mobile No.</h1> 
+                            <span t-field="doc.contact"/>
+                        </p>
+                        <p> 
+                            <h1>Medicine</h1> 
+                            <span t-field="doc.medicine"/>
+                        </p>
+                        <p> 
+                            <h1>Prescription</h1> 
+                            <span t-field="doc.prescription"/>
+                        </p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
 </odoo>

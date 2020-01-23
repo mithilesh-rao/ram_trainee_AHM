@@ -38,7 +38,6 @@ class Appointment(models.Model):
         time_env = self.env['ahm.time'].search([])
         appointment = self.env['ahm.appointment'].search([])
         appointment_env = self.env['ahm.appointment'].search([('visiting_date','=',self.visiting_date)])
-        # print("-----------------------", appointment_env.visiting_time.ids)
         return {'domain' : {'visiting_time' : [('id','not in', appointment_env.visiting_time.ids)]}}
  
 class PatientDetail(models.Model):
@@ -46,6 +45,7 @@ class PatientDetail(models.Model):
     _description = "AHM Patient Detail"
 
     app_id = fields.Many2one(comodel_name="ahm.appointment",ondelete="cascade")
+    contact = fields.Char(string="Mobile No.", related="app_id.contact")
     name = fields.Char(string="Name", required=True)
     medicine = fields.Text(String="Medicine")
     prescription = fields.Char(string="Prescription")
