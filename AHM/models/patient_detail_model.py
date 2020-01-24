@@ -44,12 +44,12 @@ class PatientDetail(models.Model):
     _name = 'ahm.patient.detail'
     _description = "AHM Patient Detail"
 
-    app_id = fields.Many2one(comodel_name="ahm.appointment",ondelete="cascade")
+    app_id = fields.Many2one(string="Visitor's Name", comodel_name="ahm.appointment",ondelete="cascade")
     contact = fields.Char(string="Mobile No.", related="app_id.contact")
-    name = fields.Char(string="Name", required=True)
+    name = fields.Char(string="Patient Name", required=True)
     medicine = fields.Text(String="Medicine")
     prescription = fields.Char(string="Prescription")
-    image = fields.Binary(string="Image",attachment=True)
+    image = fields.Binary(attachment=True)
 
 class BreedType(models.Model):
     _name = 'ahm.breed.type'

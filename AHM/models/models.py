@@ -21,9 +21,9 @@ class Health(models.Model):
             else:
                 i.duration = 2
 
-class HealthDashboard(models.Model):
-    _name = 'ahm.health.dashboard'
-    _description = "AHM Health Dashboard"
+# class HealthDashboard(models.Model):
+#     _name = 'ahm.health.dashboard'
+#     _description = "AHM Health Dashboard"
 
-    color = fields.Integer(string="Color Index")
-    name = fields.Char(string="Name")
+#     color = fields.Integer(string="Color Index")
+#     name = fields.Char(string="Name")

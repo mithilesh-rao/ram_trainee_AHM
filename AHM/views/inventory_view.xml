@@ -82,6 +82,25 @@
     <field name="view_mode">tree,form,kanban</field>
 </record>
 
+
+<record id="view_bill_form" model="ir.ui.view">
+     <field name="name">ahm.bill.form</field>
+    <field name="model">ahm.bill</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="comp"/>
+                    <field name="price"/>
+                    <field name="quantity"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+
 <record id="view_bill_kanban" model="ir.ui.view">
     <field name="name">ahm.bill.kanban</field>
     <field name="model">ahm.bill</field>

@@ -32,18 +32,15 @@ class Bill(models.Model):
 
     @api.model
     def create(self,vals):
-        print("---------Successfully Create----------")
         return super(Bill, self).create(vals)
 
     def write(self,vals):
-        print("---------Successfully Write!----------",self.env['ahm.bill'].browse([1,2])._context)
+        self.env['ahm.bill'].browse([1,2])._context
         return super(Bill, self).write(vals)        
 
     def copy(self, default=None):
-        print("---------Successfully Copied!----------")
         return super(Bill, self).copy()
 
     def unlink(self,default=None):
-        print("---------Unlinked!----------")
         return super(Bill, self).unlink()        
         

@@ -116,13 +116,17 @@
                 </header>
             <sheet>  
                 <group string="Appointment Detail">
+                    <group>
                     <field name="name"/>
                     <field name="contact"/>
+                    <field name="address"/>
+                </group>
+                <group>
                     <field name="visiting_date"/>
                     <field name="visiting_time"/>
                     <field name="visit_charges"/>
-                    <field name="address"/>
                 </group>
+            </group>
             </sheet>
         </form>
     </field>
@@ -156,13 +160,17 @@
         <form>
             <sheet>
                 <group string="Patient Detail">
+                    <group>
                     <field name="image" widget="image" class="oe_avatar oe_left" width="65" height="65"/>
                     <field name="app_id"/>
                     <field name="contact"/>
+                </group>
+                <group>
                     <field name="name"/>
                     <field name="medicine"/>
                     <field name="prescription"/>
                 </group>
+            </group>
             </sheet>
         </form>
     </field>
