@@ -27,7 +27,8 @@
     <field name="model">ahm.health</field>
     <field name="arch" type="xml">
         <graph string="Graph">
-            <field name="graph_field" type="measure"/>
+            <field name="app_id"/>
+            <field name="duration" type="measure"/>
         </graph>
     </field>
 </record>
@@ -37,9 +38,16 @@
    <field name="model">ahm.health</field>
    <field name="arch" type="xml">
          <graph string="Graph" type="pivot">
-            <field name="graph_field" type="measure"/>
+            <field name="app_id"/>
+            <field name="duration" type="measure"/>
         </graph>
    </field>
+</record>
+
+<record id="health_action" model="ir.actions.act_window">
+    <field name="name">Health</field>
+    <field name="res_model">ahm.health</field>
+    <field name="view_mode">tree,form,calendar,graph,pivot</field>
 </record>
 
 <record id="view_health_dashboard" model="ir.ui.view">
@@ -54,17 +62,19 @@
     </field>
 </record>
 
-
-<record id="health_action" model="ir.actions.act_window">
+<record id="health_dashboard_action" model="ir.actions.act_window">
     <field name="name">Health</field>
     <field name="res_model">ahm.health</field>
-    <field name="view_mode">tree,form,calendar,graph,pivot,dashboard</field>
+    <field name="view_mode">dashboard</field>
 </record>
-    
+
     <menuitem id="registration_menu" name="Animal Health Monitoring" web_icon="AHM,static/description/iv.png"/>
     
-    <menuitem id="Appointment_Menu" name="Registration" parent="registration_menu"/>
+    <menuitem id="Appointment_Menu" name="Animal" parent="registration_menu"/>
 
     <menuitem id="health_sub_menu_1" name="Health" parent="registration_menu" action="health_action" sequence="5"/>
 
+    <menuitem id="Report_Menu" name="Report" parent="registration_menu"/>
+
+    <menuitem id="health_sub_menu_2" name="Dashboard" parent="Report_Menu" action="health_dashboard_action" sequence="5"/>
 </odoo>

@@ -1,7 +1,7 @@
 {
     'name': "Animal Health Monitoring",
     'version': '1.0',
-    'depends': ['base','website','web_dashboard'],
+    'depends': ['base','web_dashboard'],
     'author': "Animal Health Monitorig",
     'category': 'Category',
     'description': """
@@ -22,9 +22,9 @@
         'views/cost_management_view.xml',
         'views/inventory_view.xml',
         # 'views/template.xml',
-        'views/templates.xml',
+        # 'views/templates.xml',
         
-        'wizard/wizard_view.xml',
+        # 'wizard/wizard_view.xml',
     ],
     
     'demo': [

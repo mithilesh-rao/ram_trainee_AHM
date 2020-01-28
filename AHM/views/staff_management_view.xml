@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
+<record id="registration_search_view" model="ir.ui.view">
+    <field name="name">ahm.registration.search</field>
+    <field name="model">ahm.registration</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+            <field name="contact"/>
+        </search>
+    </field>
+</record>
+
 <record id="registration_tree_view" model="ir.ui.view">
     <field name="name">ahm.registration.tree</field>
     <field name="model">ahm.registration</field>
@@ -83,6 +94,19 @@
     <field name="view_mode">tree,form,kanban</field>
 </record>
 
+
+<record id="organization_registration_search_view" model="ir.ui.view">
+    <field name="name">ahm.organization_registration.search</field>
+    <field name="model">ahm.organization.registration</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="org_name"/>
+            <field name="contact"/>
+        </search>
+    </field>
+</record>
+
+
 <record id="organization_registration_tree_view" model="ir.ui.view">
     <field name="name">ahm.organization_registration.tree</field>
     <field name="model">ahm.organization.registration</field>
@@ -128,19 +152,17 @@
     </field>
 </record>
 
-
 <record id="organization_registration_action" model="ir.actions.act_window">
     <field name="name">Organization Registration</field>
     <field name="res_model">ahm.organization.registration</field>
     <field name="view_mode">tree,form</field>
 </record>
 
-    <menuitem id="staff_management" name="Staff" parent="AHM.registration_menu" sequence="2"/>
+    <menuitem id="staff_management" name="Veterinary" parent="AHM.registration_menu" sequence="2"/>
 
-    <menuitem id="registration_sub_menu_1" name="Doctor Registration" parent="staff_management" action="registration_action" sequence="1"/>
+    <menuitem id="registration_sub_menu_1" name="Doctor" parent="staff_management" action="registration_action" sequence="1"/>
 
      <menuitem id="appointment_sub_menu_1" name="Appointment" parent="AHM.staff_management" action="appointment_action" sequence="1"/>
 
-    <menuitem id="organization_registration_sub_menu_1" name="Organization Registration" parent="staff_management" action="organization_registration_action"/>
-
+    <menuitem id="organization_registration_sub_menu_1" name="Organization" parent="staff_management" action="organization_registration_action"/>
 </odoo>

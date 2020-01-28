@@ -366,39 +366,4 @@
 		<field name="exp_date">2022-06-06</field>
 	</record>
 
-	<record id="stock0" model="ahm.stock">
-		<field name="name">Capsules</field>
-		<field name="comp">Dr. Reddy</field>
-	</record>
-
-	<record id="stock1" model="ahm.stock">
-		<field name="name">Tablet</field>
-		<field name="comp">Cipla</field>
-	</record>
-
-	<record id="stock2" model="ahm.stock">
-		<field name="name">Vaccine</field>
-		<field name="comp">Cipla</field>
-	</record>
-
-	<record id="stock3" model="ahm.stock">
-		<field name="name">Injection</field>
-		<field name="comp">Ranbaxy</field>
-	</record>
-
-	<record id="stock4" model="ahm.stock">
-		<field name="name">Herbal Medicine</field>
-		<field name="comp">Herbal Care</field>
-	</record>
-
-	<record id="stock5" model="ahm.stock">
-		<field name="name">Antibiotic</field>
-		<field name="comp">Ayurvedic Pharmacy</field>
-	</record>
-
-	<record id="stock6" model="ahm.stock">
-		<field name="name">Injection</field>
-		<field name="comp">Ranbaxy</field>
-	</record>
-
 </odoo>

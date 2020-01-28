@@ -64,7 +64,7 @@
                 <field name="email"/>
                 <field name="address"/>
                 <templates>
-                     <t t-name="kanban-box">
+                    <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_global_click">
                             <strong>
                             <field name="image" widget="image" width="55" height="55"/>
@@ -76,7 +76,7 @@
                                 <field name="email"/>
                             </strong>
                         </div>
-                     </t>
+                    </t>
                 </templates>
         </kanban>
     </field>
@@ -109,24 +109,24 @@
     <field name="model">ahm.appointment</field>
     <field name="arch" type="xml">
         <form>  
-                <header>
-                    <button name="confirm" string="Appointment Confirm" type="object" decoration-info="status=='confirm'" />
-                    <button name="done" string="Done" type="object" decoration-success="status=='done'"/>
-                    <field name="status" widget="statusbar" status_visible="confirm,done"/>
-                </header>
+            <header>
+                <button name="confirm" string="Appointment Confirm" type="object" decoration-info="status=='confirm'" />
+                <button name="done" string="Done" type="object" decoration-success="status=='done'"/>
+                <field name="status" widget="statusbar" status_visible="confirm,done"/>
+            </header>
             <sheet>  
                 <group string="Appointment Detail">
                     <group>
-                    <field name="name"/>
-                    <field name="contact"/>
-                    <field name="address"/>
+                        <field name="name"/>
+                        <field name="contact"/>
+                        <field name="address"/>
+                    </group>
+                    <group>
+                        <field name="visiting_date"/>
+                        <field name="visiting_time"/>
+                        <field name="visit_charges"/>
+                    </group>
                 </group>
-                <group>
-                    <field name="visiting_date"/>
-                    <field name="visiting_time"/>
-                    <field name="visit_charges"/>
-                </group>
-            </group>
             </sheet>
         </form>
     </field>
@@ -138,7 +138,7 @@
     <field name="view_mode">tree,form</field>
 </record>
 
-<record id="patient_detail_tree_view" model="ir.ui.view">
+<record id="view_patient_detail_tree" model="ir.ui.view">
     <field name="name">ahm.patient.detail.tree</field>
     <field name="model">ahm.patient.detail</field>
     <field name="type">form</field>
@@ -152,7 +152,7 @@
     </field>
 </record>
 
-<record id="patient_detail_form_view" model="ir.ui.view">
+<record id="view_patient_detail_form" model="ir.ui.view">
     <field name="name">ahm.patient.detail.form</field>
     <field name="model">ahm.patient.detail</field>
     <field name="type">form</field>
@@ -213,9 +213,8 @@
 <record id="patient_detail_action" model="ir.actions.act_window">
     <field name="name">Patient Detail</field>
     <field name="res_model">ahm.patient.detail</field>
-    <field name="view_mode">tree,form,kanban</field>
+    <field name="view_mode">form,tree,kanban</field>
 </record>
-
 
 <record id="breed_type_form_view" model="ir.ui.view">
     <field name="name">ahm.breed.type.form</field>
@@ -230,7 +229,6 @@
         </form>
     </field>
 </record>
-
 
 <record id="breed_type_tree_view" model="ir.ui.view">
     <field name="name">ahm.breed.type.tree</field>
@@ -254,7 +252,6 @@
 
     <menuitem id="patient_detail_sub_menu_1" name="Patient Detail" parent="AHM.Appointment_Menu" action="patient_detail_action" sequence="3"/>
 
-    <menuitem id="animal_registration_sub_menu_1" name="Animal Registration" parent="AHM.Appointment_Menu" action="animal_registration_action" sequence="1"/>    
-
-
+    <menuitem id="animal_registration_sub_menu_1" name="Animal" parent="AHM.Appointment_Menu" action="animal_registration_action" sequence="1"/>    
+    
 </odoo>

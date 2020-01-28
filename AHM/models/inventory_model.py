@@ -14,13 +14,6 @@ class Medicine(models.Model):
     manu_date = fields.Date(string="Manufactering Date")
     exp_date = fields.Date(string="Expiry Date")
 
-class Stock(models.Model):
-    _name = 'ahm.stock'
-    _decription = "AHM Stock"
-
-    name = fields.Char(string="Stock Name")
-    comp = fields.Char(string="Company")
-
 class Bill(models.Model):
     _name='ahm.bill'
     _decription = "AHM Bill"
