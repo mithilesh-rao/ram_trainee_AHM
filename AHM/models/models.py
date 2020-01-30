@@ -7,6 +7,7 @@ class Health(models.Model):
     _description = "AHM Health"
     _rec_name = "duration"
 
+    company_id = fields.Many2one('res.company', required=True, default=lambda self: self.env.company)
     app_id = fields.Many2one(comodel_name="ahm.appointment",ondelete="cascade")
     starting_date = fields.Date(string="Starting Date")
     ending_date = fields.Date(string="Ending Date")

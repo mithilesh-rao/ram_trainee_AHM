@@ -67,7 +67,7 @@
                     <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_global_click">
                             <strong>
-                            <field name="image" widget="image" width="55" height="55"/>
+                                <field name="image" widget="image" width="55" height="55"/>
                                 <br/>Breed Name:
                                 <field name="breed_name"/>
                                 <br/>Owner Contact:
@@ -97,7 +97,7 @@
             <field name="contact"/>
             <field name="visiting_date"/>
             <field name="visiting_time"/>
-            <field name="visit_charges" />
+            <field name="visit_charges"/>
             <field name="address"/>
             <field name="status"/>
         </tree>
@@ -145,6 +145,7 @@
     <field name="arch" type="xml">
         <tree>
             <field name="app_id"/>
+            <field name="contact"/>
             <field name="name"/>
             <field name="medicine"/>
             <field name="prescription"/>
@@ -182,6 +183,7 @@
     <field name="arch" type="xml">
          <kanban>
                 <field name="image"/>
+                <field name="contact"/>
                 <field name="name"/>
                 <field name="medicine"/>
                 <field name="prescription"/>
@@ -213,7 +215,7 @@
 <record id="patient_detail_action" model="ir.actions.act_window">
     <field name="name">Patient Detail</field>
     <field name="res_model">ahm.patient.detail</field>
-    <field name="view_mode">form,tree,kanban</field>
+    <field name="view_mode">tree,form,kanban</field>
 </record>
 
 <record id="breed_type_form_view" model="ir.ui.view">
@@ -253,5 +255,4 @@
     <menuitem id="patient_detail_sub_menu_1" name="Patient Detail" parent="AHM.Appointment_Menu" action="patient_detail_action" sequence="3"/>
 
     <menuitem id="animal_registration_sub_menu_1" name="Animal" parent="AHM.Appointment_Menu" action="animal_registration_action" sequence="1"/>    
-    
 </odoo>

@@ -21,6 +21,7 @@
         'views/staff_management_view.xml',
         'views/cost_management_view.xml',
         'views/inventory_view.xml',
+        'views/userregistration_view.xml',
         # 'views/template.xml',
         # 'views/templates.xml',
         

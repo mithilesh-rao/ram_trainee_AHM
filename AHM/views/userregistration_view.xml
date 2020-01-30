@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>  
+
+<template id="customer_index1">
+    <t t-call="portal.frontend_layout">
+        <ul class="nav nav-pills" style="justify-content:center; margin:30px;}">
+            <li class="nav-item">
+                <a class="nav-link active" href="#user" data-toggle="tab">Patient</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#doctor" data-toggle="tab">Doctor</a>
+            </li>
+        </ul>
+        <div class="tab-content" align="center">
+            <div id="user" class="tab-pane active">
+                <form method="post" action="/registration/user">
+                    <table>
+                        <tr>
+                            <td>User Name</td>
+                            <td><input class="form-control" type="text" name="username"/></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><input class="form-control" type="text" name="email"/></td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td><input class="form-control" type="text" name="password"/></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td> <button class="btn btn-secondary" type="submit" style="margin:20px;">Submit</button> </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div id="doctor" class="tab-pane">
+                <form method="post" action="/registration/doctor">
+                    <table>
+                        <tr>
+                            <td>User Name</td>
+                            <td><input class="form-control" type="text" name="username"/></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><input class="form-control" type="text" name="email"/></td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td><input class="form-control" type="text" name="password"/></td>
+                        </tr>
+                        <tr>
+                            <td>Company</td>
+                            <td><input class="form-control" type="text" name="company"/></td>
+                        </tr>
+                        <tr>
+                            <td>Currency</td>
+                            <td>
+                                <select class="btn btn-secondary dropdown-toggle"  name="currency">
+                                    <t t-foreach="currency" t-as="cur">
+                                        <option t-attf-value="{{cur.name}}"><t t-esc="cur.name"/></option>
+                                    </t>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td> <button class="btn btn-secondary" type="submit" style="margin:20px;">Submit</button> </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </t>
+</template>
+
+</odoo> 

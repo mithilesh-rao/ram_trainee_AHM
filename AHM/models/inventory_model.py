@@ -10,9 +10,11 @@ class Medicine(models.Model):
     med_type = fields.Selection(string="Medicine Type",selection=[('injection', 'Injection'), ('tablet', 'Tablet'), ('capsule', 'Capsule'),('syrup','Syrup')],
         default='capsule')
     med_company = fields.Char(string="Medicine Company",required=True)
-    price = fields.Integer(string="price",required=True)
+    price = fields.Integer(string="Price",required=True)
     manu_date = fields.Date(string="Manufactering Date")
     exp_date = fields.Date(string="Expiry Date")
+    email = fields.Char(string="Email")
+    password = fields.Char(string="Password")
 
 class Bill(models.Model):
     _name='ahm.bill'
@@ -36,4 +38,3 @@ class Bill(models.Model):
 
     def unlink(self,default=None):
         return super(Bill, self).unlink()        
-        

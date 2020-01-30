@@ -6,6 +6,7 @@ class Registration(models.Model):
     _name = 'ahm.registration'
     _description = 'AHM Registration'
 
+    company_id = fields.Many2one('res.company', required=True, default=lambda self: self.env.company)
     name = fields.Char(required=True)
     image = fields.Binary(required=True)
     contact = fields.Char(string="Contact")
@@ -17,6 +18,7 @@ class OrganizationRegistration(models.Model):
     _name = 'ahm.organization.registration'
     _description = "AHM Organization Registration"
 
+    company_id = fields.Many2one('res.company', required=True, default=lambda self: self.env.company)
     org_name = fields.Char(string="Organization Name",required=True)
     contact = fields.Integer(string="Mobile No.", required=True)
     helpline_number = fields.Integer(string="Helpline Number")
@@ -31,6 +33,7 @@ class WorkingDays(models.Model):
     _name = 'ahm.working.days'
     _description = "AHM Working Days"
 
+    company_id = fields.Many2one('res.company', required=True, default=lambda self: self.env.company)
     name = fields.Char(string="Week Day")
 
 
@@ -38,4 +41,5 @@ class Time(models.Model):
     _name = 'ahm.time'
     _description = "AHM Time"
 
+    company_id = fields.Many2one('res.company', required=True, default=lambda self: self.env.company)
     name = fields.Float(string="Time")

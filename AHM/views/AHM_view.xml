@@ -27,6 +27,7 @@
     <field name="model">ahm.health</field>
     <field name="arch" type="xml">
         <graph string="Graph">
+            <field name="company_id"/>
             <field name="app_id"/>
             <field name="duration" type="measure"/>
         </graph>
@@ -38,6 +39,7 @@
    <field name="model">ahm.health</field>
    <field name="arch" type="xml">
          <graph string="Graph" type="pivot">
+            <field name="company_id"/>
             <field name="app_id"/>
             <field name="duration" type="measure"/>
         </graph>

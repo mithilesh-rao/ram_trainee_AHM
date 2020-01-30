@@ -17,6 +17,7 @@ class Appointment(models.Model):
     _name  = 'ahm.appointment'
     _description = 'AHM Appointment'
 
+    company_id = fields.Many2one('res.company', required=True, default=lambda self: self.env.company)
     name = fields.Char(string="Name", required=True)
     contact = fields.Char(string="Mobile No.", required=True)
     visiting_date = fields.Date(string="Appointment Date")
