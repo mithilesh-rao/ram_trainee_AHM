@@ -15,7 +15,7 @@
     <field name="model">ahm.medicine</field>
     <field name="arch" type="xml">
        <tree>
-            <field name="med_id"/>
+            <!-- <field name="med_id"/> -->
             <field name="med_name"/>
             <field name="med_type"/>
             <field name="med_company"/>
@@ -33,7 +33,7 @@
         <form>
             <sheet>
                 <group>
-                    <field name="med_id"/>
+                    <!-- <field name="med_id"/> -->
                     <field name="med_name"/>
                     <field name="med_type"/>
                     <field name="med_company"/>
@@ -52,7 +52,7 @@
     <field name="model">ahm.medicine</field>
     <field name="arch" type="xml">
         <kanban>
-            <field name="med_id"/>
+            <!-- <field name="med_id"/> -->
             <field name="med_name"/>
             <field name="med_type"/>
             <field name="med_company"/>

@@ -29,7 +29,9 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td> <button class="btn btn-secondary" type="submit" style="margin:20px;">Submit</button> </td>
+                            <td> 
+                                <button class="btn btn-secondary" type="submit" style="margin:20px;">Submit</button> 
+                            </td>
                         </tr>
                     </table>
                 </form>

@@ -5,7 +5,7 @@ class Medicine(models.Model):
     _name = 'ahm.medicine'
     _decription = "AHM Medicine"
 
-    med_id = fields.Integer(string="Medicine No.")
+    # med_id = fields.Integer("Medicine Batch No.")
     med_name = fields.Char(string="Medicine Name",required=True)
     med_type = fields.Selection(string="Medicine Type",selection=[('injection', 'Injection'), ('tablet', 'Tablet'), ('capsule', 'Capsule'),('syrup','Syrup')],
         default='capsule')
@@ -13,8 +13,6 @@ class Medicine(models.Model):
     price = fields.Integer(string="Price",required=True)
     manu_date = fields.Date(string="Manufactering Date")
     exp_date = fields.Date(string="Expiry Date")
-    email = fields.Char(string="Email")
-    password = fields.Char(string="Password")
 
 class Bill(models.Model):
     _name='ahm.bill'

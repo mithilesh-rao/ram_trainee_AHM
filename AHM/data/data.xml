@@ -337,7 +337,6 @@
 	</record>
 
 	<record id="medicine0" model="ahm.medicine">
-		<field name="med_id">12364</field>
 		<field name="med_name">Herbal Medicine</field>
 		<field name="med_type">capsule</field>
 		<field name="med_company">Ayurvedic</field>
@@ -347,7 +346,6 @@
 	</record>
 
 	<record id="medicine1" model="ahm.medicine">
-		<field name="med_id">012364</field>
 		<field name="med_name">Antibiotic</field>
 		<field name="med_type">capsule</field>
 		<field name="med_company">Ayurvedic</field>
@@ -357,7 +355,6 @@
 	</record>
 
 	<record id="medicine2" model="ahm.medicine">
-		<field name="med_id">12364</field>
 		<field name="med_name">Herbal</field>
 		<field name="med_type">syrup</field>
 		<field name="med_company">Ayurvedic</field>
