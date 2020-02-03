@@ -4,7 +4,6 @@ from odoo.http import request
 from odoo.addons.web.controllers.main import Home
 
 class Home(Home):
-
     def _login_redirect(self, uid, redirect=None):
         if request.session.uid and request.env['res.users'].sudo().browse(request.session.uid).has_group('AHM.group_manager'):
             return '/web/'

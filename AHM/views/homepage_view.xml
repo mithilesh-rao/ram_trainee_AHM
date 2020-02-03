@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>  
 
+
     <template id="customer_index2">
     <t t-call="portal.frontend_layout">
         <xpath expr="." position="inside"/>
-       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" type="text/css"/>
-        
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" type="text/css"/>        
 
-    <center><h1>Animal Health Monitoring</h1></center>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top:20px;">
         <a class="navbar-brand" href="#" style="margin-right:175px;"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,10 +16,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a t-attrf-href="/AHM/the-report-for-widget?id=#{ahm.animal.registration.id}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/home"> Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Registration</a>
+                    <a class="nav-link" href="/userregister">Registration</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Appointment</a>
@@ -45,6 +44,7 @@
         </div>
     </nav>
        
+
     </t>
     </template>
 

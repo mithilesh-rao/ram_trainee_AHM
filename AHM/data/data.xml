@@ -205,45 +205,60 @@
 		<field name="name">Abhijeet</field>
 		<field name="image" type="base64" file="AHM/static/src/img/avatar.jpeg"/>
 		<field name="contact">180045620</field>
-		<field name="address">123654789</field>
+		<field name="address">Gandhinagar</field>
 		<field name="email">abhijeet@gmail.com</field>
 		<field name="specialization">In Dog</field>
+		<field name="opening_time" ref="AHM.time8"></field>
+		<field name="closing_time" ref="AHM.time22"></field>
+		<field name="workingdays" eval="[(6,0,[ref('AHM.monday'),ref('AHM.tuesday'),ref('AHM.wednesday'),ref('AHM.thursday'),ref('AHM.friday'),ref('AHM.saturday')])]"></field>
 	</record>
 
 	<record id="registration9" model="ahm.registration">
 		<field name="name">Hardeep</field>
 		<field name="image" type="base64" file="AHM/static/src/img/avatar.jpeg"/>
 		<field name="contact">180045620</field>
-		<field name="address">123654789</field>
+		<field name="address">Navsari</field>
 		<field name="email">hardeep@gmail.com</field>
 		<field name="specialization">In Cow</field>
+		<field name="opening_time" ref="AHM.time8"></field>
+		<field name="closing_time" ref="AHM.time22"></field>
+		<field name="workingdays" eval="[(6,0,[ref('AHM.monday'),ref('AHM.tuesday'),ref('AHM.wednesday'),ref('AHM.thursday'),ref('AHM.friday'),ref('AHM.saturday')])]"></field>
 	</record>
 
 	<record id="registration10" model="ahm.registration">
 		<field name="name">Avnish</field>
 		<field name="image" type="base64" file="AHM/static/src/img/avatar.jpeg"/>
 		<field name="contact">180045620</field>
-		<field name="address">123654789</field>
+		<field name="address">Surat</field>
 		<field name="email">avi@gmail.com</field>
 		<field name="specialization">In Cat</field>
+		<field name="opening_time" ref="AHM.time8"></field>
+		<field name="closing_time" ref="AHM.time22"></field>
+		<field name="workingdays" eval="[(6,0,[ref('AHM.monday'),ref('AHM.tuesday'),ref('AHM.wednesday'),ref('AHM.thursday'),ref('AHM.friday'),ref('AHM.saturday')])]"></field>
 	</record>
 
 	<record id="registration11" model="ahm.registration">
 		<field name="name">Abhay</field>
 		<field name="image" type="base64" file="AHM/static/src/img/avatar.jpeg"/>
 		<field name="contact">180045620</field>
-		<field name="address">123654789</field>
+		<field name="address">Noida</field>
 		<field name="email">abhay@gmail.com</field>
 		<field name="specialization">In Buffalo</field>
+		<field name="opening_time" ref="AHM.time8"></field>
+		<field name="closing_time" ref="AHM.time22"></field>
+		<field name="workingdays" eval="[(6,0,[ref('AHM.monday'),ref('AHM.tuesday'),ref('AHM.wednesday'),ref('AHM.thursday'),ref('AHM.friday'),ref('AHM.saturday')])]"></field>
 	</record>
 
 	<record id="registration12" model="ahm.registration">
 		<field name="name">Meet</field>
 		<field name="image" type="base64" file="AHM/static/src/img/avatar.jpeg"/>
 		<field name="contact">180045620</field>
-		<field name="address">123654789</field>
+		<field name="address">Pune</field>
 		<field name="email">meet@gmail.com</field>
-		<field name="specialization">OPD,Surgery</field>
+		<field name="specialization">In Cat</field>
+		<field name="opening_time" ref="AHM.time8"></field>
+		<field name="closing_time" ref="AHM.time22"></field>
+		<field name="workingdays" eval="[(6,0,[ref('AHM.monday'),ref('AHM.tuesday'),ref('AHM.wednesday'),ref('AHM.thursday'),ref('AHM.friday'),ref('AHM.saturday')])]"></field>
 	</record>
 
 	<record id="animal0" model="ahm.animal.registration">

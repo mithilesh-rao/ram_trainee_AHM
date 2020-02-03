@@ -15,6 +15,7 @@ class AnimalRegistration(models.Model):
 
 class Appointment(models.Model):
     _name  = 'ahm.appointment'
+    _inherit = ['mail.thread']
     _description = 'AHM Appointment'
 
     name = fields.Char(string="Name", required=True)
@@ -63,3 +64,9 @@ class BreedType(models.Model):
         ('buffalo','Buffalo'),
         ('rabbit','Rabbit')],
         default='dog')
+    org_name = fields.Many2one(comodel_name="ahm.organization.registration",context="{'org_name':True}" ,string="Department Name",required=True)
+    name = fields.Many2one(comodel_name="ahm.registration",required=True)
+    visit_charges = fields.Integer("Visiting Charges", default=1000)
+    opening_time = fields.Many2one(comodel_name="ahm.time",string="Visiting Hour From")
+    closing_time = fields.Many2one(comodel_name="ahm.time",string="Visiting Hour To")
+    workingdays = fields.Many2many(comodel_name="ahm.working.days", string="Visiting Days")

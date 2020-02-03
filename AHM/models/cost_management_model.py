@@ -5,7 +5,7 @@ class TotalCharges(models.Model):
     _description = "AHM Total Charges"
 
     app_id = fields.Many2one(comodel_name="ahm.appointment",ondelete="cascade")
-    company_id = fields.Many2one('res.company', required=True, default=lambda self: self.env.company)
+    company_id = fields.Many2one('res.company',string="Hospital Name", required=True, default=lambda self: self.env.company)
     medicine_charges = fields.Integer(string="Medicine Charges",required=True)
     total_bill = fields.Float(compute="_compute_total")
     visiting_charges = fields.Integer("Visiting Charges", default=450)
