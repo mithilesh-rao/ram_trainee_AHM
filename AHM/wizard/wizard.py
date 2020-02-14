@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class Stock(models.TransientModel):
@@ -12,5 +12,4 @@ class Stock(models.TransientModel):
     def get_default_stock(self):
         self.env['ahm.stock'].create({
             'name': self.stock_id,
-            'comp': self.comp,
-        })
+            'comp': self.comp})

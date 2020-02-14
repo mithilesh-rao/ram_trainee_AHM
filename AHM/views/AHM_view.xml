@@ -72,7 +72,7 @@
     <field name="view_mode">dashboard</field>
 </record>
 
-    <menuitem id="registration_menu" action="health_dashboard_action" name="Animal Health Monitoring" web_icon="AHM,static/description/iv.png"/>
+    <menuitem id="registration_menu" name="Animal Health Monitoring" web_icon="AHM,static/description/iv.png"/>
     
     <menuitem id="Appointment_Menu" name="Animal" parent="registration_menu"/>
 
@@ -84,6 +84,7 @@
 
 
 <!-- Health Menu -->
+
 
 <!-- Total Charges -->
 
@@ -141,7 +142,7 @@
     <field name="name">ahm.medicine.tree</field>
     <field name="model">ahm.medicine</field>
     <field name="arch" type="xml">
-       <tree>
+       <tree editable="top">
             <field name="med_name"/>
             <field name="med_type"/>
             <field name="med_company"/>
@@ -152,12 +153,19 @@
     </field>
 </record>
 
+
 <record id="view_medicine_form" model="ir.ui.view">
     <field name="name">ahm.medicine.form</field>
     <field name="model">ahm.medicine</field>
     <field name="arch" type="xml">
         <form>
             <sheet>
+                <div>
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive" invisible="1">
+                    <field name="active" widget="boolean_button" options='{"terminology": "archive"}' invisible="1"/>
+                   </button>
+                   <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                </div>
                 <group>
                     <field name="med_name"/>
                     <field name="med_type"/>
@@ -277,13 +285,49 @@
     <field name="view_mode">tree,form,graph,kanban</field>
 </record>
 
-<menuitem id="Inventory_Menu" parent="AHM.registration_menu" name="Inventory" sequence="4" />
+
+<record id="doctor_equipment_tree_view" model="ir.ui.view">
+    <field name="name">ahm.doctor.equipment.tree</field>
+    <field name="model">ahm.doctor.equipment</field>
+    <field name="arch" type="xml">
+        <tree string="Total Charges Form">
+            <field name="name"/>
+            <field name="price"/>
+            <field name="quantity"/>
+        </tree>
+    </field>
+</record>
+
+<record id="doctor_equipment_form_view" model="ir.ui.view">
+    <field name="name">ahm.doctor.equipment.form</field>
+    <field name="model">ahm.doctor.equipment</field>
+    <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="price"/>
+                    <field name="quantity"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="doctor_equipment_action" model="ir.actions.act_window">
+    <field name="name">Doctor's Equipment Detail</field>
+    <field name="res_model">ahm.doctor.equipment</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+
+<menuitem id="Inventory_Menu" parent="AHM.registration_menu" name="Pharmacy" sequence="4" />
 
 <menuitem id="medicine_sub_menu_1" name="Medicine Stock" parent="Inventory_Menu" action="medicine_action" sequence="2" />
 
 <menuitem id="bill_sub_menu_1" name="Medicine Stock Bill" parent="Inventory_Menu" action="bill_action" sequence="2" />
 
-
+<menuitem id="doctor_equipment_sub_menu_1" name="Doctor Equipment" parent="Inventory_Menu" action="doctor_equipment_action"/>
 
 <record id="patient_detail_search_view" model="ir.ui.view">
     <field name="name">ahm.patient.detail.search</field>
@@ -317,7 +361,7 @@
     <field name="name">ahm.animal_registration.form</field>
     <field name="model">ahm.animal.registration</field>
     <field name="arch" type="xml">
-        <form>
+        <form create="false">
             <sheet>
                 <group string="Animal Registration Detail">
                     <group>
@@ -377,6 +421,10 @@
     <field name="model">ahm.appointment</field>
     <field name="arch" type="xml">
         <tree string="Appointment Form">
+            <field name="b_type"/>
+            <field name="org_name"/>
+            <field name="doc_name"/>
+            <field name="patient_id"/>
             <field name="name"/>
             <field name="contact"/>
             <field name="visiting_date"/>
@@ -394,16 +442,23 @@
     <field name="arch" type="xml">
         <form>  
             <header>
-                <button name="confirm" string="Appointment Confirm" type="object" decoration-info="status=='confirm'" />
-                <button name="done" string="Done" type="object" decoration-success="status=='done'"/>
+                <button name="pending" string="Appointment Pending" type="object" decoration-info="status=='pending'" invisible="1" />
+                <button name="confirm" string="Appointment Confirm" type="object" decoration-info="status=='confirm'" invisible="1" />
+                <button name="done" string="Done" type="object" decoration-success="status=='done'" invisible="1"/>
                 <field name="status" widget="statusbar" status_visible="confirm,done"/>
             </header>
             <sheet>  
                 <group string="Appointment Detail">
                     <group>
+                        <field name="hospital_name" invisible="1"/>
+                        <field name="b_type"/>
+                        <field name="org_name"/>
+                        <field name="add_doc_name" invisible="1"/>
+                        <field name="doc_name"/>
+                        <field name="patient_id"/>
                         <field name="name"/>
-                        <field name="contact"/>
                         <field name="address"/>
+                        <field name="contact"/>
                     </group>
                     <group>
                         <field name="visiting_date"/>
@@ -412,10 +467,6 @@
                     </group>
                 </group>
             </sheet>
-             <div class="oe_chatter">
-                <field name="message_follower_ids" widget="mail_followers"/>
-                <field name="message_ids" widget="mail_thread"/>
-            </div>
         </form>
     </field>
 </record>
@@ -429,12 +480,12 @@
 <record id="view_patient_detail_tree" model="ir.ui.view">
     <field name="name">ahm.patient.detail.tree</field>
     <field name="model">ahm.patient.detail</field>
-    <field name="type">form</field>
+    <field name="type">tree</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="app_id"/>
-            <field name="contact"/>
             <field name="name"/>
+            <field name="contact"/>
+            <field name="email"/>
             <field name="medicine"/>
             <field name="prescription"/>
         </tree>
@@ -451,11 +502,11 @@
                 <group string="Patient Detail">
                     <group>
                     <field name="image" widget="image" class="oe_avatar oe_left" width="65" height="65"/>
-                    <field name="app_id"/>
-                    <field name="contact"/>
+                    <field name="name"/>
                 </group>
                 <group>
-                    <field name="name"/>
+                    <field name="contact"/>
+                    <field name="email"/>
                     <field name="medicine"/>
                     <field name="prescription"/>
                 </group>
@@ -470,11 +521,12 @@
     <field name="model">ahm.patient.detail</field>
     <field name="arch" type="xml">
          <kanban>
-                <field name="image"/>
-                <field name="contact"/>
                 <field name="name"/>
+                <field name="contact"/>
+                <field name="email"/>
                 <field name="medicine"/>
                 <field name="prescription"/>
+                <field name="image"/>
                 <templates>
                      <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_global_click">
@@ -485,7 +537,7 @@
                             </group>
                             <strong>
                                 <group>
-                                    Name :
+                                    Visitor's Name : 
                                     <field name="name"/>
                                     <br/>Medicine :
                                     <field name="medicine"/>
@@ -572,7 +624,7 @@
     <field name="model">ahm.registration</field>
     <field name="arch" type="xml">
         <tree string="Registration Form">
-            <field name="company_id"/>
+            <field name="company_id" invisible="1"/>
             <field name="name"/>
             <field name="contact"/>
             <field name="email"/>
@@ -596,7 +648,7 @@
                         <field name="image" widget="image" class="oe_avatar oe_left"/>
                     </group>
                     <group string="Name">
-                        <field name="company_id"/>
+                        <field name="company_id" invisible="1"/>
                         <field name="name"/>   
                     </group>    
                     <group string="Personal Details">
@@ -612,6 +664,10 @@
                     </group>
                 </group>
             </sheet>
+            <!-- <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers"/>
+                <field name="message_ids" widget="mail_thread"/>
+            </div> -->
         </form>
     </field>
 </record>
@@ -621,7 +677,7 @@
     <field name="model">ahm.registration</field>
     <field name="arch" type="xml">
         <kanban>
-            <field name="company_id"/>
+            <field name="company_id" invisible="1"/>
             <field name="name"/>
             <field name="image" widget="oe_avatar"/>
             <field name="contact"/>
@@ -673,22 +729,21 @@
     </field>
 </record>
 
-
 <record id="organization_registration_tree_view" model="ir.ui.view">
     <field name="name">ahm.organization_registration.tree</field>
     <field name="model">ahm.organization.registration</field>
     <field name="arch" type="xml">
         <tree string="Animal Registration Form">
-                <field name="company_id"/>
-                <field name="org_name"/>
-                <field name="contact"/>
-                <field name="helpline_number"/>
-                <field name="email"/>
-                <field name="facility"/>
-                <field name="address"/>
-                <field name="opening_time"/>
-                <field name="closing_time"/>
-                <field name="workingdays"/>
+            <field name="org_name"/>
+            <field name="doc_name" invisible="1"/>
+            <field name="contact"/>
+            <field name="helpline_number"/>
+            <field name="email"/>
+            <field name="facility"/>
+            <field name="address"/>
+            <field name="opening_time"/>
+            <field name="closing_time"/>
+            <field name="workingdays"/>
         </tree>
     </field>
 </record>
@@ -714,7 +769,11 @@
                         <field name="closing_time"/>
                         <field name="workingdays"/>
                     </group>
-                </group>    
+                </group>
+                <group>
+                    <group>  <field name="doc_name" /> </group>
+                   <group> <field name="animal_name"/></group>
+                </group>
             </sheet>
         </form>
     </field>
@@ -728,6 +787,7 @@
        <kanban>
             <field name="company_id"/>
             <field name="org_name"/>
+            <field name="doc_name"/>
             <field name="contact"/>
             <field name="helpline_number"/>
             <field name="email"/>
@@ -739,22 +799,20 @@
             <templates>
                 <t t-name="kanban-box">
                     <div t-attf-class="oe_kanban_global_click">
-                    <strong>
-                        Organization Name : 
-                        <field name="org_name"/><br/>
-                        Contact No. :
-                        <field name="contact"/><br/>
-                        Facilty : 
-                        <field name="facility"/><br/>
-                    </strong>
-                </div>
-            </t>
-        </templates>   
+                        <strong>
+                            Organization Name : 
+                            <field name="org_name"/><br/>
+                            Contact No. :
+                            <field name="contact"/><br/>
+                            Facilty : 
+                            <field name="facility"/><br/>
+                        </strong>
+                    </div>
+                </t>
+            </templates>   
        </kanban>
-        
     </field>
 </record>
-
 
 <record id="organization_registration_action" model="ir.actions.act_window">
     <field name="name">Organization Registration</field>
@@ -762,13 +820,14 @@
     <field name="view_mode">tree,form,kanban</field>
 </record>
 
+
+
     <menuitem id="staff_management" name="Veterinary" parent="AHM.registration_menu" sequence="2"/>
 
     <menuitem id="registration_sub_menu_1" name="Doctor" parent="staff_management" action="registration_action" sequence="1"/>
 
-     <menuitem id="appointment_sub_menu_1" name="Appointment" parent="AHM.staff_management" action="appointment_action" sequence="1"/>
+     <menuitem id="appointment_sub_menu_1" name="Appointment" parent="registration_menu" action="appointment_action" sequence="1"/>
 
     <menuitem id="organization_registration_sub_menu_1" name="Organization" parent="staff_management" action="organization_registration_action"/>
-
 
 </odoo>
